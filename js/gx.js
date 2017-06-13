@@ -1,0 +1,17 @@
+//导航
+$(function(){
+    $(".menu-list").hover(function(){
+        $(".menu-list").addClass("y-color");
+        $(".menu-box").show();
+    })
+    $(".menu-box").hover(function(){
+        $(".menu-box").show();
+    },function(){
+        $(".menu-box").hide();
+        $(".menu-list").removeClass("y-color");
+    })
+    $(".menu-index").hover(function(){
+        $(".menu-box").hide();
+        $(".menu-list").removeClass("y-color");
+    })
+})

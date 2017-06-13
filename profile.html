@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>（景区/城市）百度网络搜索关注度排名</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/ecStat.min.js" type="text/javascript"></script>
+	<script src="js/china.js" type="text/javascript"></script>
+	<script src="js/gx.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_en8vsfbbb2kmlsor.css">
+</head>
+<body>
+    <div class="containerWrap clearfix profileWrap">
+		<!--标题-->
+		<div class="gx-title box">
+			<h1>网络关注度排名</h1>
+			<div class="nav">
+				<a href="javascript:;"  class="menu menu-list">
+					<i class="iconfont icon-dh"></i> 导航
+				</a>
+				<a href="index.html" class="menu menu-index">
+					<i class="iconfont icon-index"></i> 返回首页
+				</a>
+			</div>
+			<!--下拉菜单-->
+			<div class="menu-box none">
+				<ul>
+					<li><a href="count.html">全部统计</a></li>
+					<li><a href="list.html">新闻资讯列表</a></li>
+					<li><a href="profile.html">网络关注度排名</a></li>
+					<li><a href="scenic.html">广西景区排名</a></li>
+					<li><a href="weather.html">气象环保分析</a></li>
+					<li><a href="keliu.html">广西客流来源分布</a></li>
+					<li><a href="hot_search.html">广西城市热搜分析</a></li>
+					<li><a href="mudidi.html">广西游客出境/国内目的地分析</a></li>
+					<li><a href="baidu_hot.html">百度旅游关注热词分析</a></li>
+					<li><a href="manyidu.html">游客满意度统计分析</a></li>
+					<li><a href="zixun.html">同业担保交易实时</a></li>
+					<li><a href="hetong.html">电子合同出游实时</a></li>
+					<li><a href="website.html">旅行社网站使用统计</a></li>
+					<li><a href="wei_card.html">旅行社从业人员微名片分布</a></li>
+					<li><a href="chengxin_qiye.html">诚信企业分析</a></li>
+					<li><a href="xiaofei_nianling.html">游客消费水平及年龄分析</a></li>
+					<li><a href="shuangchuang.html">双创人群统计</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--内容 17 -->
+		<div class="profile1-main">
+			<div class="profile1-main-list" id="item1"></div>
+			<div class="profile1-main-list" id="item2"></div>
+		</div>
+
+		<!--内容 18 -->
+		<div class="profile1-main" id="item3">
+
+		</div>
+
+		<div class="profile1-main" id="item4">
+
+		</div>
+    </div>
+
+	<script type="text/javascript">
+     $.ajax({
+            async:false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=1',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                var myChart = echarts.init(document.getElementById('item1'), 'macarons');
+                // 指定图表的配置项和数据
+                var dataAxis = json.data.all_column[0];
+                var data = json.data.all_column[1];
+                var yMax = 500;
+                var dataShadow = [];
+
+                for (var i = 0; i < data.length; i++) {
+                    dataShadow.push(yMax);
+                }
+                option = {
+                    title: {
+                        text: "[ 城市搜索关注度排名 ]  top10",
+                        y: "top",
+                        x: "left",
+                        textStyle: {
+                            color: "#fff",
+                        }
+                    },
+                    xAxis: {
+                        data: dataAxis,
+                        splitLine: {
+                            show: false
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            }
+                        },
+                        axisTick: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                            show: false
+                        },
+                        nameTextStyle: {
+                            color: "rgb(255, 255, 255)"
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                            interval:0,//横轴信息全部显示
+                            rotate:-30,//-30度角倾斜显示
+                        }
+                    },
+                    yAxis: {
+                        splitLine: {
+                            show: false
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            }
+                        },
+                        axisTick: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                            show: false
+                        },
+                        nameTextStyle: {
+                            color: "rgb(255, 255, 255)"
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: "rgb(255, 255, 255)"
+                            }
+                        }
+                    },
+                    series: [
+                        { // For shadow
+                            type: 'bar',
+                            itemStyle: {
+                                normal: {color: 'rgba(0,0,0,0.05)'}
+                            },
+                            barGap:'-100%',
+                            barCategoryGap:'40%',
+                            data: dataShadow,
+                            animation: false
+                        },
+                        {
+                            type: 'bar',
+                            data: data
+                        }
+                    ],
+                    color:  ['rgb(123,229,255)'],
+                    grid:{
+                        x:"14%",
+                        x2:"3%"
+                    }
+                };
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        
+        // 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async:false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=19',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+//                console.log(json.data);
+                var myChart = echarts.init(document.getElementById('item2'), 'macarons');
+
+                // 指定图表的配置项和数据
+                var dataAxis = json.data.all_column[0];
+                var data = json.data.all_column[1];
+                var yMax = 500;
+                var dataShadow = [];
+
+                for (var i = 0; i < data.length; i++) {
+                    dataShadow.push(yMax);
+                }
+
+                option = {
+                    title: {
+                        text: "[ 景区搜索关注度排名 ] top10",
+                        y: "top",
+                        x: "left",
+                        textStyle: {
+                            color: "#fff",
+
+                        }
+                    },
+                    xAxis: {
+                        data: dataAxis,
+                        splitLine: {
+                            show: false
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            }
+                        },
+                        axisTick: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                            show: false
+                        },
+                        nameTextStyle: {
+                            color: "rgb(255, 255, 255)"
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                            interval:0,//横轴信息全部显示
+                            rotate: -45
+                        }
+                    },
+                    yAxis: {
+                        splitLine: {
+                            show: false
+                        },
+                        axisLine: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            }
+                        },
+                        axisTick: {
+                            lineStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                            show: false
+                        },
+                        nameTextStyle: {
+                            color: "rgb(255, 255, 255)"
+                        },
+                        axisLabel: {
+                            textStyle: {
+                                color: "rgb(255, 255, 255)"
+                            }
+                        }
+                    },
+                    dataZoom: [
+                        {
+                            type: 'inside'
+                        }
+                    ],
+                    series: [
+                        { // For shadow
+                            type: 'bar',
+                            itemStyle: {
+                                normal: {
+                                    color: 'rgba(0,0,0,0.05)'}
+                            },
+                            barGap: '-100%',
+                            barCategoryGap: '40%',
+                            data: dataShadow,
+                            animation: false
+                        },
+                        {
+                            type: 'bar',
+//                            itemStyle: {
+//                                normal: {
+//                                    color: new echarts.graphic.LinearGradient(
+//                                        0, 0, 0, 1,
+//                                        [
+//                                            {offset: 0, color: '#83bff6'},
+//                                            {offset: 0.5, color: '#188df0'},
+//                                            {offset: 1, color: '#188df0'}
+//                                        ]
+//                                    )
+//                                },
+//                                emphasis: {
+//                                    color: new echarts.graphic.LinearGradient(
+//                                        0, 0, 0, 1,
+//                                        [
+//                                            {offset: 0, color: '#2378f7'},
+//                                            {offset: 0.7, color: '#2378f7'},
+//                                            {offset: 1, color: '#83bff6'}
+//                                        ]
+//                                    )
+//                                }
+//                            },
+                            data: data
+                        }
+                    ],
+                    color:  ['#FEC66C'],
+                    grid:{
+                        x:"14%",
+                        x2:"3%"
+                    }
+
+                };
+
+                myChart.setOption(option);
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        $.ajax({
+            async:false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=16',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                var myChart = echarts.init(document.getElementById('item3'), 'macarons');
+
+                var option = {
+                    title: {
+                        x: "left",
+                        text: "[城市搜索客户来源分析]",
+                        textStyle: {
+                            color: "#fff",
+
+                        }
+                    },
+                    textStyle: {
+                        color: '#ffffff'
+                    },
+                    dataRange: {
+                        min: 0,
+                        max: Math.max.apply(null,json.data.all_column[1]),
+                        x: "10%",
+                        y2: "10%",
+                        text: ["高", "低"],
+                        calculable: true,
+                        textStyle: {
+                            color: '#ffffff'
+                        },
+                        itemWidth:12,
+                        itemHeight: 80
+                    },
+//                    visualMap: {
+//                      min: 0,
+//                        max: 100000,
+//                        left: 'left',
+//                        top: 'bottom',
+//                        textStyle: {
+//                            color: '#ffffff'
+//                        },
+//                        calculable: true
+//                    },
+                    series: [
+                        {
+                            name: '来源',
+                            type: 'map',
+                            mapType: 'china',
+                            textStyle: {
+                                color: '#ffffff'
+                            },
+                            label: {
+                                show: false,
+                                normal: {
+                                    show: true
+                                },
+                                textStyle: {
+                                    color: '#ffffff'
+                                },
+                                emphasis: {
+                                    show: true
+                                }
+                            },
+                            data: json.data.name_value
+                        }
+                    ]
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        });
+    </script>
+
+    <script type="text/javascript">
+        
+        // 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=56',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                var myChart = echarts.init(document.getElementById('item4'), '');
+                var option = {
+                        title: {
+                            x: "left",
+                            text: "[最近六个月搜索量统计]",
+                            textStyle: {
+                                color: "#fff",
+
+                            }
+                        },
+                        tooltip: {
+                            trigger: "axis"
+                        },
+                         legend: {
+                            data: ["城市搜索量", "景区搜索量"],
+                            textStyle: {
+                                color: 'white',
+
+                            },
+                            y:"8%",
+                            x:"left"
+                         },
+                        textStyle: {
+                            color: 'white'
+                        },
+                        calculable: true,
+                        xAxis: [
+                            {
+                                type: "category",
+                                boundaryGap: false,
+                                data: json.data.all_column[0],
+                                splitLine: {
+                                    lineStyle: {
+                                        color: "#000000",
+                                        type: "dashed"
+                                    },
+                                    show: false
+                                },nameTextStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisLabel: {
+                                    textStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisTick: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+
+                                scale: true,
+                            }
+                        ],
+                        yAxis: [
+                            {
+                                type: "value",
+                                splitLine: {
+                                    lineStyle: {
+                                        color: "#000000",
+                                        type: "dashed"
+                                    },
+                                    show: false
+                                },nameTextStyle: {
+                                color: "rgb(255, 255, 255)"
+                            },
+                                axisLine: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisLabel: {
+                                    textStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisTick: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+
+                                scale: true,
+                                splitNumber: 4,
+                            }
+                        ],
+                        series: [
+                            {
+                                name: "城市搜索量",
+                                type: "line",
+                                data: json.data.all_column[1]
+                            },
+                            {
+                                name: "景区搜索量",
+                                type: "line",
+                                data: json.data.all_column[2]
+                            }
+                        ],
+                        color:['#45FFD4' ,'#FFAD27', '#1660e8' ],
+                        grid:{
+                            x:'18%',
+                            x2:"5%",
+                            y:"15%"
+                        }
+                    };
+
+                myChart.setOption(option);
+            }
+        });
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

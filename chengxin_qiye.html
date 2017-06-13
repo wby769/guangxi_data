@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>广西旅游数据-城信企业</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/ecStat.min.js" type="text/javascript"></script>
+	<script src="js/china.js" type="text/javascript"></script>
+	<script src="js/guangxi.js" type="text/javascript"></script>
+	<script src="js/gx.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_vsomejrxine6zuxr.css">
+</head>
+<body>
+    <div class="containerWrap clearfix chengxinWrap">
+		<!--标题-->
+		<div class="gx-title box">
+			<h1>诚信企业分析</h1>
+			<div class="nav">
+				<a href="javascript:;"  class="menu menu-list">
+					<i class="iconfont icon-dh"></i> 导航
+				</a>
+				<a href="index.html" class="menu menu-index">
+					<i class="iconfont icon-index"></i> 返回首页
+				</a>
+			</div>
+			<!--下拉菜单-->
+			<div class="menu-box none">
+				<ul>
+					<li><a href="count.html">全部统计</a></li>
+					<li><a href="list.html">新闻资讯列表</a></li>
+					<li><a href="profile.html">网络关注度排名</a></li>
+					<li><a href="scenic.html">广西景区排名</a></li>
+					<li><a href="weather.html">气象环保分析</a></li>
+					<li><a href="keliu.html">广西客流来源分布</a></li>
+					<li><a href="hot_search.html">广西城市热搜分析</a></li>
+					<li><a href="mudidi.html">广西游客出境/国内目的地分析</a></li>
+					<li><a href="baidu_hot.html">百度旅游关注热词分析</a></li>
+					<li><a href="manyidu.html">游客满意度统计分析</a></li>
+					<li><a href="zixun.html">同业担保交易实时</a></li>
+					<li><a href="hetong.html">电子合同出游实时</a></li>
+					<li><a href="website.html">旅行社网站使用统计</a></li>
+					<li><a href="wei_card.html">旅行社从业人员微名片分布</a></li>
+					<li><a href="chengxin_qiye.html">诚信企业分析</a></li>
+					<li><a href="xiaofei_nianling.html">游客消费水平及年龄分析</a></li>
+					<li><a href="shuangchuang.html">双创人群统计</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="chengxin-main box">
+			<div class="chengxin-main-item box">
+				<p style="font-size: 18px">[ 旅行社诚信经营承诺占比统计 ]</p>
+				<div class="list box">
+					<p class="first">旅行社数：<span class="">1568</span>家</p>
+					<p>境内社：1333 家</p>
+					<p>出境社：231 家</p>
+					<p>赴台社：4 家</p>
+				</div>
+				<div class="list box">
+					<p class="first">诚信经营企业：<span class="">1490</span>家</p>
+					<p>境内社：1426 家</p>
+					<p>出境社：63 家</p>
+					<p>赴台社：1家</p>
+				</div>
+			</div>
+			<div class="chengxin-main-item box" id="item1">
+
+			</div>
+		</div>
+		<div class="chengxin-main box" id="item2">
+
+		</div>
+		<div class="chengxin-main box" id="item3">
+
+		</div>
+    </div>
+	<script>
+
+        // 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=13',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                var myChart = echarts.init(document.getElementById('item1'), '');
+                var option =
+                    {
+                        textStyle: {
+                            color: '#ffffff'
+                        },
+                        tooltip: {
+                            trigger: "item",
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: "vertical",
+                            x: "3%",
+                            y: "2",
+                            textStyle: {
+                                color: '#ffffff'
+                            },
+                            data: json.data.all_column[0]
+                        },
+                        series: [
+                            {
+                                name: "旅行社诚信经营承诺占比",
+                                type: "pie",
+                                selectedMode: "single",
+                                itemStyle: {
+                                    normal: {
+                                        label: {
+                                            position: "inside",
+                                            formatter: "{b}: {c} ({d}%)"
+                                        },
+                                        labelLine: {
+                                            show: false
+                                        }
+                                    }
+                                },
+                                data: [],
+                                radius: [0, 70]
+                            },
+                            {
+                                name: "旅行社诚信经营承诺占比",
+                                type: "pie",
+                                radius: ['40%', '60%'],
+                                data: json.data.name_value
+                            }
+                        ],
+						color: ['#FFAC28', '#1557D1']
+                    };
+
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+	<script>
+
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=47',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+//                console.log(json.data);
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('item2'), 'macarons');
+
+                // 指定图表的配置项和数据
+                option = {
+                    title: {
+                        text: "[ 诚信经营旅行社分布分析 ]",
+                        y: "top",
+                        x: "left",
+                        textStyle: {
+                            color: "#fff",
+
+                        }
+                    },
+                    visualMap: {
+                        min: 0,
+                        max: Math.max.apply(null,json.data.all_column[1]),
+                        x: '5%',
+                        y2: '10%',
+                        textStyle: {
+                            color: '#ffffff'
+                        },
+                        calculable: true,
+                        itemWidth: '15%',
+                        itemHeight: "80%"
+                    },
+                    tooltip: {
+                        trigger: "item"
+                    },
+                    roamController: {
+                        show: true,
+                        x: "right"
+                    },
+                    series: [
+                        {
+                            name: "旅行社分布",
+                            type: "map",
+                            mapType: "china",
+                            roam: false,
+                            mapValueCalculation: "sum",
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        show: true
+                                    }
+                                },
+                                emphasis: {
+                                    label: {
+                                        show: true
+                                    }
+                                }
+                            },
+                            data: json.data.name_value
+                        }
+                    ]
+                    ,color: ['#389bb8', '#1557D1']
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+
+	<script>
+        // 基于准备好的dom，初始化echarts实例
+
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=48',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json.data);
+                var myChart = echarts.init(document.getElementById('item3'), 'macarons');
+
+                // 指定图表的配置项和数据
+                var option = {
+                    title: {
+                        text: "[ 诚信经营承诺书发布分析 ]",
+                        y: "top",
+                        x: "left",
+                        textStyle: {
+                            color: "#fff",
+
+                        }
+                    },
+                    textStyle: {
+                        color: '#ffffff'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    grid: {
+                        left: '3%',
+                        top: '12%',
+                        bottom: '15%',
+                        containLabel: true
+                    },
+                    xAxis: {
+                        type: 'category',
+                        boundaryGap: false,
+                        data: json.data.all_column[0],
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+							show: false
+						},
+						nameTextStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						}
+                    },
+                    yAxis: {
+                        type: 'value',
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+							show: false
+						},
+						nameTextStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						}
+                    },
+                    series: [
+                        {
+                            name: '诚信经营承诺书发布分析',
+                            type: 'line',
+                            stack: '总量',
+                            data: json.data.all_column[1]
+                        }
+                    ]
+                    ,color: ['#31b29f']
+                };
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

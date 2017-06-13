@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>广西旅游数据-全部统计</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/swiper.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/china.js" type="text/javascript"></script>
+	<script src="js/world.js" type="text/javascript"></script>
+	<script src="js/ecStat.min.js" type="text/javascript"></script>
+	<script src="https://unpkg.com/vue/dist/vue.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.3"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_ghqgia2at6na5rk9.css">
+</head>
+<body>
+	<!--<div id="app"></div>-->
+    <div class="containerWrap clearfix">
+    	<div class="container-list1">
+    		<div class="item-main">
+				<a href="profile.html">
+					<div id="item1" class="item1">
+
+					</div>
+				</a>
+    		</div>
+	    	<div class="item-main">
+				<a href="xiaofei_nianling.html">
+					<div class="item2">
+						<div style="width: 50%;height: 100%" class="left" id="item2"></div>
+						<div style="width: 50%;height: 100%" class="left" id="item2-2"></div>
+					</div>
+				</a>
+				<h1 class="index-title odd-ellipsis">游客消费水平及年龄分析</h1>
+	    	</div>
+	    	<div class="item-main">
+				<a href="website.html">
+					<div class="item3" id="item3">
+
+					</div>
+				</a>
+	    	</div>
+    	</div>
+    	<div class="container-list2">
+    		<div class="item-main">
+				<a href="manyidu.html">
+					<div class="item4" id="item4">
+
+					</div>
+				</a>
+    		</div>
+	    	<div class="item-main">
+				<a href="mudidi.html">
+					<div class="item5" id="item5">
+
+					</div>
+				</a>
+	    	</div>
+	    	<div class="item-main">
+				<a href="hetong.html">
+					<div class="item6" id="item6">
+
+					</div>
+				</a>
+	    	</div>
+    	</div>
+    	<div class="container-main">
+    		<div class="main2 box main-box">
+				<a href="chengxin_qiye.html">
+					<div class="main-item left" id="main-item-left">
+					</div>
+				</a>
+				<a href="wei_card.html">
+					<div class="main-item right" id="main-item-right">
+
+					</div>
+				</a>
+	    	</div>
+    		<!-- 气象环保分析 -->
+    		<div class="main1 box main-box">
+    			<div class="qixiang-wrap">
+					<a href="weather.html">
+						<div class="qixiang-box weather-box">
+							<h1>气象环保分析</h1>
+							<div class="city-title">
+								<b>桂林</b>
+								<span class="y-color">[未来5天天气]</span>
+								<span class="g-color pingjun">平均气温20℃</span>
+							</div>
+							<ul class="clearfix">
+								<li class="fen-color no1">
+									<!-- 角 -->
+									<div class="jiao1"></div>
+									<div class="jiao2"></div>
+									<div class="jiao3"></div>
+									<div class="jiao4"></div>
+									<div class="tianqi-img" style="background:rgba(255,117,238,0.1)">
+										<i class="iconfont"></i>
+									</div>
+									<p>&nbsp;</p>
+									<p>17℃~23℃</p>
+									<p>晴</p>
+									<p>微风级</p>
+									<p>东北风</p>
+									<p>&nbsp;</p>
+								</li>
+								<li class="g-color no2">
+									<!-- 角 -->
+									<div class="jiao1"></div>
+									<div class="jiao2"></div>
+									<div class="jiao3"></div>
+									<div class="jiao4"></div>
+									<div class="tianqi-img" style="background:rgba(70,255,211,0.1)">
+										<i class="iconfont"></i>
+									</div>
+									<p>&nbsp;</p>
+									<p>17℃~23℃</p>
+									<p>晴</p>
+									<p>微风级</p>
+									<p>东北风</p>
+									<p>&nbsp;</p>
+								</li>
+								<li class="y-color no3">
+									<!-- 角 -->
+									<div class="jiao1"></div>
+									<div class="jiao2"></div>
+									<div class="jiao3"></div>
+									<div class="jiao4"></div>
+									<div class="tianqi-img" style="background:rgba(255,172,40,0.1)">
+										<i class="iconfont"></i>
+									</div>
+									<p>&nbsp;</p>
+									<p>17℃~23℃</p>
+									<p>晴</p>
+									<p>微风级</p>
+									<p>东北风</p>
+									<p>&nbsp;</p>
+								</li>
+								<li class="lan-color no4">
+									<!-- 角 -->
+									<div class="jiao1"></div>
+									<div class="jiao2"></div>
+									<div class="jiao3"></div>
+									<div class="jiao4"></div>
+									<div class="tianqi-img" style="background:rgba(128,230,255,0.1)">
+										<i class="iconfont"></i>
+									</div>
+									<p>&nbsp;</p>
+									<p>17℃~23℃</p>
+									<p>晴</p>
+									<p>微风级</p>
+									<p>东北风</p>
+									<p>&nbsp;</p>
+								</li>
+								<li class="zi-color no5">
+									<!-- 角 -->
+									<div class="jiao1"></div>
+									<div class="jiao2"></div>
+									<div class="jiao3"></div>
+									<div class="jiao4"></div>
+									<div class="tianqi-img" style="background:rgba(167,145,255,0.1)">
+										<i class="iconfont"></i>
+									</div>
+									<p>&nbsp;</p>
+									<p>17℃~23℃</p>
+									<p>晴</p>
+									<p>微风级</p>
+									<p>东北风</p>
+									<p>&nbsp;</p>
+								</li>
+							</ul>
+						</div>
+					</a>
+					<a href="index.html" title="" class="index-btn">首页</a>
+    			</div>
+    		</div>
+    	</div>
+    	<div class="container-list3">
+    		<div class="item-main">
+				<a href="scenic.html">
+					<div class="item7" id="item7">
+
+					</div>
+				</a>
+    		</div>
+	    	<div class="item-main">
+				<a href="hot_search.html">
+					<div class="item8" id="item8">
+
+					</div>
+				</a>
+	    	</div>
+	    	<div class="item-main">
+				<a href="zixun.html">
+					<div class="item9" id="item9">
+						<ul class="nbbc clearfix">
+							<li>
+								<div style="background:#6abed8">供</div>
+								<div>
+									<b class="lan-color">134</b>
+									<p>供应商总数</p>
+								</div>
+							</li>
+							<li>
+								<div style="background:#36bca4">分</div>
+								<div>
+									<b class="lan-color">1340</b>
+									<p>分销商总数</p>
+								</div>
+							</li>
+							<li>
+								<div style="background:#b759b7">单</div>
+								<div>
+									<b class="lan-color">227623</b>
+									<p>订单总数</p>
+								</div>
+							</li>
+						</ul>
+						<h1 class="index-title odd-ellipsis">同业担保交易实时</h1>
+					</div>
+				</a>
+	    	</div>
+    	</div>
+    	<div class="container-list4">
+    		<div class="item-main">
+				<a href="keliu.html">
+					<div class="item10" id="item10">
+
+					</div>
+				</a>
+    		</div>
+	    	<div class="item-main">
+				<a href="baidu_hot.html">
+					<div class="item11">
+						<div class="baidu_hot">
+							<span style="color:#2ed7d1;left:5%;top:22%;font-size:12px;">风景</span>
+							<span style="color:#0eb247;left:35%;top:14%;font-size:16px;">沙滩</span>
+							<span style="color:#d7cf0d;left:60%;top:12%;font-size:17px;">象鼻山</span>
+							<span style="color:#cf0c31;left:80%;top:29%;font-size:12px;">柳州</span>
+							<span style="color:#a76a12;left:40%;top:48%;font-size:12px;">涠洲岛</span>
+							<span style="color:#81a61d;left:60%;top:50%;font-size:12px;">漓江风光</span>
+							<span style="color:#3fe762;left:15%;top:52%;font-size:16px;">古镇</span>
+							<span style="color:#35e1df;left:35%;top:68%;font-size:18px;">淳朴人家</span>
+							<span style="color:#9235e1;left:10%;top:72%;font-size:14px;">北部湾</span>
+							<span style="color:#4d6ee7;left:70%;top:70%;font-size:16px;">漓江</span>
+							<span style="color:#f64ffc;left:18%;top:30%;font-size:18px;">桂林山水甲天下</span>
+						</div>
+						<h1 class="index-title odd-ellipsis">百度旅游关注热词分析</h1>
+					</div>
+				</a>
+	    	</div>
+	    	<div class="item-main">
+				<a href="shuangchuang.html">
+					<div class="item12">
+						<div style="width: 50%;height: 100%" class="left" id="item12"></div>
+						<div style="width: 50%;height: 100%" class="left" id="item12-2"></div>
+					</div>
+				</a>
+				<h1 class="index-title odd-ellipsis">双创人群统计</h1>
+	    	</div>
+    	</div>
+    </div>
+	<!-- item1 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+        $.ajax({
+			async:false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=1',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+				var myChart = echarts.init(document.getElementById('item1'), 'macarons');
+
+//                console.log(json.data);
+
+				// 指定图表的配置项和数据
+				var dataAxis = json.data.all_column[0];
+				var data = json.data.all_column[1];
+				var yMax = 500;
+				var dataShadow = [];
+
+				for (var i = 0; i < data.length; i++) {
+					dataShadow.push(yMax);
+				}
+				option = {
+					title: {
+						text: "网络关注度排名",
+						y2: "5%",
+						x: "center",
+						textStyle: {
+							color: "#fff",
+							fontWeight: "normal",
+							fontSize:16,
+
+						}
+					},
+					xAxis: {
+						data: dataAxis,
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							show: false
+						}
+					},
+					yAxis: {
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+							show: false
+						},
+						nameTextStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						}
+					},
+					series: [
+						{ // For shadow
+							type: 'bar',
+							itemStyle: {
+								normal: {color: 'rgba(0,0,0,0.05)'}
+							},
+							barGap:'-100%',
+							barCategoryGap:'40%',
+							data: dataShadow,
+							animation: false
+						},
+						{
+							type: 'bar',
+							data: data
+						}
+					],
+					color:  ['#7BE5FF'],
+					grid: {
+					        borderWidth: 0,
+					        x2:"5%",
+					        x: "30%",
+					        y:"15%",
+					    }
+				};
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			}
+		});
+	</script>
+
+	<!-- item2 -->
+	<script>
+		$.ajax({
+        async: false,
+        url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=50',
+        type: "GET",
+        dataType: 'jsonp',
+        timeout: 5000,
+        success: function (json) {
+            console.log(json);
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('item2'));
+
+            var option =
+                {
+                    title: {
+                        x: "center",
+                        y: "center",
+                        text: "消费能力",
+                        textStyle: {
+                            color: "#fff",
+                            fontSize: 12,
+                            fontWeight: "normal"
+                        }
+                    },
+                    textStyle: {
+                        color: '#ffffff'
+                    },
+                    tooltip: {
+                        trigger: "item",
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    // legend: {
+                    //     orient: "vertical",
+                    //     x: "left",
+                    //     textStyle: {
+                    //         color: '#ffffff'
+                    //     },
+                    //     data:json.data.all_column[0]
+                    // },
+                    calculable: false,
+                    series: [
+                        {
+                            name: "游客消费能力统计",
+                            type: "pie",
+                            selectedMode: "single",
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                    	show:false,
+                                        position: "inside",
+                                        formatter: "{b}: {c} ({d}%)"
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            data: [],
+                            radius: [0, 70]
+                        },
+                        {
+                            name: "游客消费能力统计",
+                            type: "pie",
+                            radius: ['50%', '65%'],
+                            data: json.data.name_value,
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                    	show:false,
+                                        position: "inside",
+                                        formatter: "{b}: {c} ({d}%)"
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                        }
+                    ],color:['#73FE4C','#FA5C51','#397DE8']
+                };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+    });
+
+
+
+	$.ajax({
+        async: false,
+        url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=51',
+        type: "GET",
+        dataType: 'jsonp',
+        timeout: 5000,
+        success: function (json) {
+            console.log(json);
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('item2-2'));
+
+            var option =
+                {
+                    title: {
+                        x: "center",
+                        y: "center",
+                        text: "交通工具",
+                        textStyle: {
+                            color: "#fff",
+                            fontSize: 12,
+                            fontWeight: "normal"
+                        }
+                    },
+                    textStyle: {
+                        color: '#ffffff'
+                    },
+                    tooltip: {
+                        trigger: "item",
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    // legend: {
+                    //     orient: "vertical",
+                    //     x: "left",
+                    //     textStyle: {
+                    //         color: '#ffffff'
+                    //     },
+                    //     data: json.data.all_column[0]
+                    // },
+                    calculable: false,
+                    series: [
+                        {
+                            name: "交通工具",
+                            type: "pie",
+                            selectedMode: "single",
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                        position: "inside",
+                                        formatter: "{b}: {c} ({d}%)"
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            data: [],
+                            radius: [0, 70]
+                        },
+                        {
+                            name: "交通工具",
+                            type: "pie",
+                            radius: ['50%', '65%'],
+                            data: json.data.name_value,
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                    	show:false,
+                                        position: "inside",
+                                        formatter: "{b}: {c} ({d}%)"
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                        }
+                    ],color:['#E2B944','#E653FD','#5EE1F8']
+                };
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+        }
+    });
+
+	</script>
+
+	<!-- item3 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+			async:false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=11',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+
+				var myChart = echarts.init(document.getElementById('item3'));
+				var option = {
+					title: {
+						text: "旅行社网站使用统计",
+						x: "center",
+						y2: "5%",
+						textStyle: {
+							color: "#fff",
+							fontWeight: "normal",
+							fontSize:16,
+
+						}
+					},
+					textStyle: {
+						color: '#ffffff'
+					},
+					tooltip: {
+						trigger: "item",
+						formatter: "{a} <br/>{b} : {c} ({d}%)"
+					},
+					legend: {
+						show: false,
+						data: json.data.all_column[0],
+						textStyle: {
+							color: '#ffffff'
+						},
+						orient: "vertical",
+						x: "left",
+						y: "center"
+					},
+					series: [
+						{
+							name: "使用频率",
+							type: "pie",
+							radius: "55%",
+							center: ["50%", "45%"],
+							itemStyle: {
+								normal: {
+									label: {
+										show:false,
+										formatter: "{b}: {c} ({d}%)"
+									}
+								}
+							},
+							data:json.data.name_value
+						}
+					],
+					color: ['#FFAC28', '#4FD2FE', '#A791FE', '#5B72E4']
+				};
+
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			}
+		});
+	</script>
+
+	<!-- item4 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+			async: false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=34',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+				// console.log(json);
+				var myChart = echarts.init(document.getElementById('item4'), '');
+				var option = {
+					title: {
+						text: "游客满意度统计分析",
+						x: "center",
+						y2: "5%",
+						textStyle: {
+							color: "rgb(255, 255, 255)",
+							fontWeight: "normal",
+							fontSize:16,
+						}
+					},
+					tooltip: {
+						trigger: "axis",
+						show: true,
+						textStyle: {
+							align: "right"
+						}
+					},
+					legend: {
+						show: false,
+						data: ["问卷满意度", "舆情满意度", "投诉满意度"],
+						x: "right",
+						textStyle: {
+							color: "rgb(255, 255, 255)"
+						}
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: false
+							},
+							dataView: {
+								show: true,
+								readOnly: true
+							},
+							magicType: {
+								show: false,
+								type: ["line", "bar"]
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						},
+						x: "right"
+					},
+					calculable: true,
+					xAxis: [
+						{
+							type: "category",
+							boundaryGap: false,
+							data: json.data.all_column[0],
+							axisLabel: {
+								textStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisLine: {
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisTick: {show:false},
+						}
+					],
+					yAxis: [
+						{
+							type: "value",
+							scale:true,
+							axisLabel: {
+								textStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisLine: {
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							splitLine: {
+								show: false
+							},
+							axisTick: {show:false},
+
+						}
+					],
+					series: [
+						{
+							name: "问卷满意度",
+							type: "line",
+							data: json.data.all_column[1],
+							itemStyle: {
+								normal: {
+									lineStyle: {
+										color: "#FE74ED"
+									}
+								}
+							}
+						},
+						{
+							name: "舆情满意度",
+							type: "line",
+							data: json.data.all_column[2],
+							itemStyle: {
+								normal: {
+									lineStyle: {
+										color: "#FDAC25"
+									}
+								}
+							}
+						},
+						{
+							type: "line",
+							name: "投诉满意度",
+							data: json.data.all_column[3],
+							itemStyle: {
+								normal: {
+									lineStyle: {
+										color: "#46FED2"
+									}
+								}
+							}
+						}
+					],
+					grid: {
+					        x2:"5%",
+					        x: "15%",
+					        y:"15%",
+					    }
+				};
+				myChart.setOption(option);
+			}
+		});
+
+	</script>
+
+	<!-- item5 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+			async: false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=31',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+				var myChart = echarts.init(document.getElementById('item5'), 'macarons');
+
+				option = {
+					title : {
+						text: '广西游客出境/国内目的地分析',
+						// subtext: 'from United Nations, Total population, both sexes combined, as of 1 July (thousands)',
+						// sublink : 'http://esa.un.org/wpp/Excel-Data/population.htm',
+						x: "center",
+						y2: "5%",
+						textStyle: {
+							color: "rgb(255, 255, 255)",
+							fontWeight: "normal",
+							fontSize:16,
+						}
+					},
+					tooltip : {
+						show: false,
+						trigger: 'item',
+						formatter : function (params) {
+							if(isNaN(params.value)) {
+								return params.seriesName + '<br/>' + params.name;
+							}
+							var value = params.value;
+
+							return params.seriesName + '<br/>' + params.name + ' : ' + value;
+
+						}
+					},
+					toolbox: {
+						show : false,
+						orient : 'vertical',
+						x: 'right',
+						y: 'center',
+						feature : {
+							mark : {show: true},
+							dataView : {show: true, readOnly: false},
+							restore : {show: true},
+							saveAsImage : {show: true}
+						}
+					},
+					dataRange: {
+						show:false,
+						min: 0,
+						max: 100000,
+						// text:['High','Low'],
+						realtime: false,
+						calculable : true,
+						color: ["rgb(255, 69, 0)", "rgb(249, 252, 12)", "rgb(135, 206, 250)"],
+						textStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+					},
+					series : [
+						{
+							name: 'World Population (2010)',
+							type: 'map',
+							mapType: 'world',
+							roam: true,
+							mapLocation: {
+								y : 60
+							},
+							itemStyle:{
+								emphasis:{label:{show:true}}
+							},
+							data: json.data.name_value
+//						data:[
+//							{name : 'Afghanistan', value : 28397.812},
+//							{name : 'Angola', value : 19549.124},
+//							{name : 'Albania', value : 3150.143},
+//							{name : 'United Arab Emirates', value : 8441.537},
+//							{name : 'Argentina', value : 40374.224},
+//							{name : 'Armenia', value : 2963.496},
+//							{name : 'French Southern and Antarctic Lands', value : 268.065},
+//							{name : 'Australia', value : 22404.488},
+//							{name : 'Austria', value : 8401.924},
+//							{name : 'Azerbaijan', value : 9094.718},
+//							{name : 'Burundi', value : 9232.753},
+//							{name : 'Belgium', value : 10941.288},
+//							{name : 'Benin', value : 9509.798},
+//							{name : 'Burkina Faso', value : 15540.284},
+//							{name : 'Bangladesh', value : 151125.475},
+//							{name : 'Bulgaria', value : 7389.175},
+//							{name : 'The Bahamas', value : 66402.316},
+//							{name : 'Bosnia and Herzegovina', value : 3845.929},
+//							{name : 'Belarus', value : 9491.07},
+//							{name : 'Belize', value : 308.595},
+//							{name : 'Bermuda', value : 64.951},
+//							{name : 'Bolivia', value : 716.939},
+//							{name : 'Brazil', value : 195210.154},
+//							{name : 'Brunei', value : 27.223},
+//							{name : 'Bhutan', value : 716.939},
+//							{name : 'Botswana', value : 1969.341},
+//							{name : 'Central African Republic', value : 4349.921},
+//							{name : 'Canada', value : 34126.24},
+//							{name : 'Switzerland', value : 7830.534},
+//							{name : 'Chile', value : 17150.76},
+//							{name : 'China', value : 1359821.465},
+//							{name : 'Ivory Coast', value : 60508.978},
+//							{name : 'Cameroon', value : 20624.343},
+//							{name : 'Democratic Republic of the Congo', value : 62191.161},
+//							{name : 'Republic of the Congo', value : 3573.024},
+//							{name : 'Colombia', value : 46444.798},
+//							{name : 'Costa Rica', value : 4669.685},
+//							{name : 'Cuba', value : 11281.768},
+//							{name : 'Northern Cyprus', value : 1.468},
+//							{name : 'Cyprus', value : 1103.685},
+//							{name : 'Czech Republic', value : 10553.701},
+//							{name : 'Germany', value : 83017.404},
+//							{name : 'Djibouti', value : 834.036},
+//							{name : 'Denmark', value : 5550.959},
+//							{name : 'Dominican Republic', value : 10016.797},
+//							{name : 'Algeria', value : 37062.82},
+//							{name : 'Ecuador', value : 15001.072},
+//							{name : 'Egypt', value : 78075.705},
+//							{name : 'Eritrea', value : 5741.159},
+//							{name : 'Spain', value : 46182.038},
+//							{name : 'Estonia', value : 1298.533},
+//							{name : 'Ethiopia', value : 87095.281},
+//							{name : 'Finland', value : 5367.693},
+//							{name : 'Fiji', value : 860.559},
+//							{name : 'Falkland Islands', value : 49.581},
+//							{name : 'France', value : 63230.866},
+//							{name : 'Gabon', value : 1556.222},
+//							{name : 'United Kingdom', value : 62066.35},
+//							{name : 'Georgia', value : 4388.674},
+//							{name : 'Ghana', value : 24262.901},
+//							{name : 'Guinea', value : 10876.033},
+//							{name : 'Gambia', value : 1680.64},
+//							{name : 'Guinea Bissau', value : 10876.033},
+//							{name : 'Equatorial Guinea', value : 696.167},
+//							{name : 'Greece', value : 11109.999},
+//							{name : 'Greenland', value : 56.546},
+//							{name : 'Guatemala', value : 14341.576},
+//							{name : 'French Guiana', value : 231.169},
+//							{name : 'Guyana', value : 786.126},
+//							{name : 'Honduras', value : 7621.204},
+//							{name : 'Croatia', value : 4338.027},
+//							{name : 'Haiti', value : 9896.4},
+//							{name : 'Hungary', value : 10014.633},
+//							{name : 'Indonesia', value : 240676.485},
+//							{name : 'India', value : 1205624.648},
+//							{name : 'Ireland', value : 4467.561},
+//							{name : 'Iran', value : 240676.485},
+//							{name : 'Iraq', value : 30962.38},
+//							{name : 'Iceland', value : 318.042},
+//							{name : 'Israel', value : 7420.368},
+//							{name : 'Italy', value : 60508.978},
+//							{name : 'Jamaica', value : 2741.485},
+//							{name : 'Jordan', value : 6454.554},
+//							{name : 'Japan', value : 127352.833},
+//							{name : 'Kazakhstan', value : 15921.127},
+//							{name : 'Kenya', value : 40909.194},
+//							{name : 'Kyrgyzstan', value : 5334.223},
+//							{name : 'Cambodia', value : 14364.931},
+//							{name : 'South Korea', value : 51452.352},
+//							{name : 'Kosovo', value : 97.743},
+//							{name : 'Kuwait', value : 2991.58},
+//							{name : 'Laos', value : 6395.713},
+//							{name : 'Lebanon', value : 4341.092},
+//							{name : 'Liberia', value : 3957.99},
+//							{name : 'Libya', value : 6040.612},
+//							{name : 'Sri Lanka', value : 20758.779},
+//							{name : 'Lesotho', value : 2008.921},
+//							{name : 'Lithuania', value : 3068.457},
+//							{name : 'Luxembourg', value : 507.885},
+//							{name : 'Latvia', value : 2090.519},
+//							{name : 'Morocco', value : 31642.36},
+//							{name : 'Moldova', value : 103.619},
+//							{name : 'Madagascar', value : 21079.532},
+//							{name : 'Mexico', value : 117886.404},
+//							{name : 'Macedonia', value : 507.885},
+//							{name : 'Mali', value : 13985.961},
+//							{name : 'Myanmar', value : 51931.231},
+//							{name : 'Montenegro', value : 620.078},
+//							{name : 'Mongolia', value : 2712.738},
+//							{name : 'Mozambique', value : 23967.265},
+//							{name : 'Mauritania', value : 3609.42},
+//							{name : 'Malawi', value : 15013.694},
+//							{name : 'Malaysia', value : 28275.835},
+//							{name : 'Namibia', value : 2178.967},
+//							{name : 'New Caledonia', value : 246.379},
+//							{name : 'Niger', value : 15893.746},
+//							{name : 'Nigeria', value : 159707.78},
+//							{name : 'Nicaragua', value : 5822.209},
+//							{name : 'Netherlands', value : 16615.243},
+//							{name : 'Norway', value : 4891.251},
+//							{name : 'Nepal', value : 26846.016},
+//							{name : 'New Zealand', value : 4368.136},
+//							{name : 'Oman', value : 2802.768},
+//							{name : 'Pakistan', value : 173149.306},
+//							{name : 'Panama', value : 3678.128},
+//							{name : 'Peru', value : 29262.83},
+//							{name : 'Philippines', value : 93444.322},
+//							{name : 'Papua New Guinea', value : 6858.945},
+//							{name : 'Poland', value : 38198.754},
+//							{name : 'Puerto Rico', value : 3709.671},
+//							{name : 'North Korea', value : 1.468},
+//							{name : 'Portugal', value : 10589.792},
+//							{name : 'Paraguay', value : 6459.721},
+//							{name : 'Qatar', value : 1749.713},
+//							{name : 'Romania', value : 21861.476},
+//							{name : 'Russia', value : 21861.476},
+//							{name : 'Rwanda', value : 10836.732},
+//							{name : 'Western Sahara', value : 514.648},
+//							{name : 'Saudi Arabia', value : 27258.387},
+//							{name : 'Sudan', value : 35652.002},
+//							{name : 'South Sudan', value : 9940.929},
+//							{name : 'Senegal', value : 12950.564},
+//							{name : 'Solomon Islands', value : 526.447},
+//							{name : 'Sierra Leone', value : 5751.976},
+//							{name : 'El Salvador', value : 6218.195},
+//							{name : 'Somaliland', value : 9636.173},
+//							{name : 'Somalia', value : 9636.173},
+//							{name : 'Republic of Serbia', value : 3573.024},
+//							{name : 'Suriname', value : 524.96},
+//							{name : 'Slovakia', value : 5433.437},
+//							{name : 'Slovenia', value : 2054.232},
+//							{name : 'Sweden', value : 9382.297},
+//							{name : 'Swaziland', value : 1193.148},
+//							{name : 'Syria', value : 7830.534},
+//							{name : 'Chad', value : 11720.781},
+//							{name : 'Togo', value : 6306.014},
+//							{name : 'Thailand', value : 66402.316},
+//							{name : 'Tajikistan', value : 7627.326},
+//							{name : 'Turkmenistan', value : 5041.995},
+//							{name : 'East Timor', value : 10016.797},
+//							{name : 'Trinidad and Tobago', value : 1328.095},
+//							{name : 'Tunisia', value : 10631.83},
+//							{name : 'Turkey', value : 72137.546},
+//							{name : 'United Republic of Tanzania', value : 44973.33},
+//							{name : 'Uganda', value : 33987.213},
+//							{name : 'Ukraine', value : 46050.22},
+//							{name : 'Uruguay', value : 3371.982},
+//							{name : 'United States of America', value : 312247.116},
+//							{name : 'Uzbekistan', value : 27769.27},
+//							{name : 'Venezuela', value : 236.299},
+//							{name : 'Vietnam', value : 89047.397},
+//							{name : 'Vanuatu', value : 236.299},
+//							{name : 'West Bank', value : 13.565},
+//							{name : 'Yemen', value : 22763.008},
+//							{name : 'South Africa', value : 51452.352},
+//							{name : 'Zambia', value : 13216.985},
+//							{name : 'Zimbabwe', value : 13076.978}
+//						]
+						}
+					]
+				};
+
+
+
+				myChart.setOption(option);
+
+			}
+		});
+	</script>
+
+	<!-- item6 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+			async: false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=10',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+				$('#box1 p:eq(0)').text('合同人数：'+json.data.all_sum[1]+'人');
+				$('#box1 p:eq(1)').text('订单人数：'+json.data.all_sum[2]+'人');
+				var myChart = echarts.init(document.getElementById('item6'), '');
+				var option = {
+					title : {
+						text: '电子合同出游实时',
+						// subtext: 'from United Nations, Total population, both sexes combined, as of 1 July (thousands)',
+						// sublink : 'http://esa.un.org/wpp/Excel-Data/population.htm',
+						x: "center",
+						y2: "5%",
+						textStyle: {
+							color: "rgb(255, 255, 255)",
+							fontWeight: "normal",
+							fontSize:16,
+						}
+					},
+					tooltip: {
+						trigger: "axis"
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: true
+							},
+							magicType: {
+								show: false,
+								type: ["line", "bar"]
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: true,
+					xAxis: [
+						{
+							type: "category",
+							boundaryGap: false,
+							data: json.data.all_column[0],
+							splitLine: {
+								lineStyle: {
+									color: "#000000",
+									type: "dashed"
+								},
+								show: false
+							},nameTextStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+							axisLine: {
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisLabel: {
+								textStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisTick: {
+								show:false,
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+
+							scale: true,
+						}
+					],
+					yAxis: [
+						{
+							type: "value",
+							// name: "°C",
+							splitLine: {
+								lineStyle: {
+									color: "#000000",
+									type: "dashed"
+								},
+								show: false
+							},nameTextStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+							axisLine: {
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisLabel: {
+								textStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisTick: {
+								show:false,
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+
+							scale: true,
+						}
+					],
+					series: [
+						{
+							name: "合同人数",
+							type: "line",
+							data: json.data.all_column[1]
+						},
+						{
+							name: "订单人数",
+							type: "line",
+							data: json.data.all_column[2]
+						}
+					],
+					color: ['#1E4258', '#663084'],
+					grid: {
+					        x2:"5%",
+					        x: "25%",
+					        y:"15%",
+					    }
+				};
+
+				myChart.setOption(option);
+			}
+		});
+	</script>
+
+	<!-- main-item-left -->
+	<script>
+		
+		// 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=13',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                var myChart = echarts.init(document.getElementById('main-item-left'), '');
+                var option =
+                    {
+                    	title: {
+							text: "诚信企业分析",
+							y2: "5%",
+							x: "center",
+							textStyle: {
+								color: "#fff",
+								fontWeight: "normal",
+								fontSize: 16
+							}
+						},
+                        textStyle: {
+                            color: '#ffffff'
+                        },
+                        tooltip: {
+                            trigger: "item",
+                            formatter: "{a} <br/>{b} : {c} ({d}%)"
+                        },
+                        legend: {
+                            orient: "vertical",
+                            x: "left",
+                            textStyle: {
+                                color: '#ffffff'
+                            },
+                            data: json.data.all_column[0]
+                        },
+                        series: [
+                            {
+                                name: "旅行社诚信经营承诺占比",
+                                type: "pie",
+                                selectedMode: "single",
+                                itemStyle: {
+                                    normal: {
+                                        label: {
+                                            position: "inside",
+                                            formatter: "{b}: {c} ({d}%)"
+                                        },
+                                        labelLine: {
+                                            show: false
+                                        }
+                                    }
+                                },
+                                data: [],
+                                radius: [0, '20%']
+                            },
+                            {
+                                name: "旅行社诚信经营承诺占比",
+                                type: "pie",
+                                radius: ['40%', '60%'],
+                                data: json.data.name_value,
+                                itemStyle: {
+                                normal: {
+                                    label: {
+                                    	show:false,
+                                        position: "inside",
+                                        formatter: "{b}: {c} ({d}%)"
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                            }
+                        ],
+						color: ['#FFAC28', '#1557D1']
+                    };
+
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+	<!-- main-item-right -->
+	<script type="text/javascript">
+
+		// 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=46',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                var myChart = echarts.init(document.getElementById('main-item-right'), '');
+                var option ={
+						title: {
+							text: "旅行社从业人员微名片分布",
+							y2: "5%",
+							x: "center",
+							textStyle: {
+								color: "#fff",
+								fontWeight: "normal",
+								fontSize: 16
+							}
+						},
+						tooltip: {
+							trigger: "axis"
+						},
+						// legend: {
+						// 	data: ["转发量", "分享量"],
+						// 	x:"right",
+						// 	textStyle: {
+						// 		color: "rgb(255, 172, 40)",
+						// 		fontSize: 15
+						// 	}
+						// },
+						toolbox: {
+							show: false,
+							feature: {
+								mark: {
+									show: true
+								},
+								dataView: {
+									show: true,
+									readOnly: true
+								},
+								magicType: {
+									show: false,
+									type: ["line", "bar"]
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: true,
+						xAxis: [
+							{
+								type: "category",
+								data: json.data.all_column[0],
+								nameTextStyle: {
+									color: "rgb(255, 255, 255)"
+								},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									show: false,
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								splitLine: {
+									show: false
+								},
+								scale: true
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								nameTextStyle: {
+									color: "rgb(255, 255, 255)"
+								},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									show: false,
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								splitLine: {
+									show: false
+								},
+								scale: true
+							}
+						],
+						series: [
+							{
+								name: "转发量",
+								type: "bar",
+								data: json.data.all_column[1],
+								itemStyle: {
+					                normal: {
+					                    label: {
+					                        show: false,
+					                        position: "right",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    },
+					                    color: "#FF74F1"
+					                }
+					            }
+							},
+							{
+								name: "分享量",
+								type: "bar",
+								data: json.data.all_column[2],
+								itemStyle: {
+					                normal: {
+					                    label: {
+					                        show: false,
+					                        position: "right",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    },
+					                    color: "#B19BFF"
+					                }
+					            }
+							}
+						],
+					    grid: {
+					        x2:"5%",
+					        x: "25%",
+					        y:"15%",
+					    }
+					};
+
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+
+
+	<!-- item7 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+			async: false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=41',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+				var myChart = echarts.init(document.getElementById('item7'), '');
+				var option = {
+					title: {
+						text: "广西景区排名",
+						x: "center",
+						y2: "5%",
+						textStyle: {
+							color: 'white',
+							fontWeight: "normal",
+							fontSize:16,
+
+						}
+					},
+					tooltip: {
+						trigger: "item",
+						formatter: "{a} <br/>{b} : {c} ({d}%)"
+					},
+					legend: {
+						orient: "vertical",
+						x: "left",
+						data: json.data.all_column[0],
+						textStyle: {
+							color: 'white',
+
+						},
+						show: false
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: true
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: true,
+					series: [
+						{
+							name: "访问来源",
+							type: "pie",
+							radius: "55%",
+							center: ["50%", "45%"],
+							data: json.data.name_value,
+							itemStyle: {
+								normal: {
+									label: {
+										show:false,
+										formatter: "{b}   {d}%"
+									}
+								}
+							}
+						}
+					],
+					color: ['#46FFD3','#FE72EC','#FFAB2A','#1557CF','#A891FB']
+				};
+
+				myChart.setOption(option);
+			}
+		});
+
+
+		// 使用刚指定的配置项和数据显示图表。
+		// myChart.setOption(option);
+	</script>
+
+	<!-- item8 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+			async: false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=29',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+				// 基于准备好的dom，初始化echarts实例
+
+				var myChart = echarts.init(document.getElementById('item8'), 'macarons');
+				option = {
+					title: {
+						text: "广西城市热搜分析",
+						textStyle: {
+							fontWeight: "normal",
+							color: "rgb(255, 255, 255)",
+							fontSize:16,
+						},
+						y2: "5%",
+						x: "center",
+					},
+					tooltip: {
+						trigger: "axis"
+					},
+					toolbox: {
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: true
+							},
+							magicType: {
+								show: false,
+								type: ["line", "bar"]
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						},
+						show: false
+					},
+					calculable: true,
+					xAxis: [
+						{
+							type: "category",
+							data: json.data.all_column[0],
+							splitLine: {
+								show: false
+							},
+							axisLine: {
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisLabel: {
+								textStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisTick: {
+								show: false
+							}
+						}
+					],
+					yAxis: [
+						{
+							type: "value",
+							splitLine: {
+								show: false
+							},
+							axisLine: {
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							axisTick: {
+								lineStyle: {
+									color: "rgb(255, 255, 255)"
+								},
+								show: false
+							},
+							nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+							axisLabel: {
+								textStyle: {
+									color: "rgb(255, 255, 255)"
+								}
+							},
+							scale: true,
+							splitNumber: 4
+						}
+					],
+					series: [
+						{
+							name: "搜索指数",
+							type: "bar",
+							data: json.data.all_column[1],
+							itemStyle: {
+								normal: {
+									color: "rgb(11, 241, 2)",
+									label: {
+										show: false,
+										position: "insideTop",
+										textStyle: {
+											color: "rgb(0, 0, 0)"
+										}
+									}
+								}
+							}
+						}
+					],
+					grid: {
+					        x2:"5%",
+					        x: "25%",
+					        y:"15%",
+					    }
+				}
+
+				;
+				myChart.setOption(option);
+			}
+		});
+	</script>
+
+	<!-- item10 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+			async: false,
+			url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=24',
+			type: "GET",
+			dataType: 'jsonp',
+			timeout: 5000,
+			success: function (json) {
+				var myChart = echarts.init(document.getElementById('item10'), 'macarons');
+				var option  = {
+					title: {
+						y2: "5%",
+						x: "center",
+						text: "广西客流来源分布",
+						textStyle: {
+							color: "#fff",
+							fontWeight: "normal",
+							fontSize:16,
+
+						}
+					},
+					textStyle: {
+						color: '#ffffff'
+					},
+					tooltip: {
+						trigger: "item"
+					},
+					dataRange: {
+						show: false,
+						min: 0,
+						max: Math.max.apply(null,json.data.all_column[1]),
+						color: ["#006edd", "#e0ffff"]
+					},
+					roamController: {
+						mapTypeControl: {
+							china: true
+						}
+					},
+					series: [
+						{
+							name: "来源",
+							type: "map",
+							mapType: "china",
+							roam: false,
+							mapValueCalculation: "sum",
+							itemStyle: {
+								normal: {
+									label: {
+										show: false
+									}
+								},
+								emphasis: {
+									label: {
+										show: true
+									}
+								}
+							},
+							data: json.data.name_value
+						}
+					]
+				};
+
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+			}
+		});
+	</script>
+
+	<!-- item11 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		var myChart = echarts.init(document.getElementById('item11'), 'macarons');
+
+		// 指定图表的配置项和数据
+		option = {
+			title: {
+				text: "双创人群统计",
+				y2: "5%",
+				x: "center",
+				textStyle: {
+					color: "#fff",
+					fontWeight: "normal",
+					fontSize:16,
+
+				}
+			},
+			tooltip : {
+				trigger: 'axis',
+				axisPointer: {
+					type: 'cross',
+					label: {
+						backgroundColor: '#6a7985'
+					}
+				}
+			},
+			legend: {
+				data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+			},
+			toolbox: {
+				feature: {
+					saveAsImage: {}
+				}
+			},
+			grid: {
+				left: '3%',
+				right: '4%',
+				bottom: '3%',
+				containLabel: true
+			},
+			xAxis : [
+				{
+					type : 'category',
+					boundaryGap : false,
+					data : ['周一','周二','周三','周四','周五','周六','周日']
+				}
+			],
+			yAxis : [
+				{
+					type : 'value'
+				}
+			],
+			series : [
+				{
+					name:'邮件营销',
+					type:'line',
+					stack: '总量',
+					areaStyle: {normal: {}},
+					data:[120, 132, 101, 134, 90, 230, 210]
+				},
+				{
+					name:'联盟广告',
+					type:'line',
+					stack: '总量',
+					areaStyle: {normal: {}},
+					data:[220, 182, 191, 234, 290, 330, 310]
+				},
+				{
+					name:'视频广告',
+					type:'line',
+					stack: '总量',
+					areaStyle: {normal: {}},
+					data:[150, 232, 201, 154, 190, 330, 410]
+				},
+				{
+					name:'直接访问',
+					type:'line',
+					stack: '总量',
+					areaStyle: {normal: {}},
+					data:[320, 332, 301, 334, 390, 330, 320]
+				},
+				{
+					name:'搜索引擎',
+					type:'line',
+					stack: '总量',
+					label: {
+						normal: {
+							show: true,
+							position: 'top'
+						}
+					},
+					areaStyle: {normal: {}},
+					data:[820, 932, 901, 934, 1290, 1330, 1320]
+				}
+			]
+		};
+
+
+		// 使用刚指定的配置项和数据显示图表。
+		myChart.setOption(option);
+	</script>
+
+	<!-- item12 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=53',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json.data);
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('item12'), 'macarons');
+
+                // 指定图表的配置项和数据
+                option = {
+                    title: {
+                        text: "性别",
+                        y: "center",
+                        x: "center",
+                        textStyle: {
+                            color: "#fff",
+                            fontSize: 12,
+                            fontWeight: "normal"
+                        }
+                    },
+                    tooltip: {
+                        trigger: "item",
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    // legend: {
+                    //     orient: "vertical",
+                    //     x: "left",
+                    //     data:json.data.all_column[0],
+                    //     textStyle: {
+                    //         color: "rgb(255, 172, 40)",
+
+                    //     }
+                    // },
+                    calculable: true,
+                    series: [
+                        {
+                            name: "性别",
+                            type: "pie",
+                            radius: ["50%", "70%"],
+
+                            data: json.data.name_value,
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                    	show:false,
+                                        position: "inside",
+                                        formatter: "{b}: {c} ({d}%)"
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                        }
+                    ]
+                    ,color:['#FF27D0','#FFDE00']
+                };
+
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        });
+
+
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=63',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json.data);
+                // 基于准备好的dom，初始化echarts实例
+                var myChart = echarts.init(document.getElementById('item12-2'), 'macarons');
+
+                // 指定图表的配置项和数据
+                option = {
+                    title: {
+                        text: "年龄",
+                        x: "center",
+                        y: "center",
+                        textStyle: {
+                            color: 'white',
+                            fontSize: 12,
+                            fontWeight: "normal"
+                        }
+                    },
+                    tooltip: {
+                        trigger: "item",
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    // legend: {
+                    //     orient: "vertical",
+                    //     x: "left",
+                    //     data: json.data.all_column[0],
+                    //     textStyle: {
+                    //         color: "rgb(255, 172, 40)",
+
+                    //     }
+                    // },
+                    calculable: true,
+                    series: [
+                        {
+                            name: "年龄统计",
+                            type: "pie",
+                            radius: ["50%", "70%"],
+
+                            data: json.data.name_value,
+                            itemStyle: {
+                                normal: {
+                                    label: {
+                                    	show:false,
+                                        position: "inside",
+                                        formatter: "{b}: {c} ({d}%)"
+                                    },
+                                    labelLine: {
+                                        show: false
+                                    }
+                                }
+                            },
+                        }
+                    ]
+                    ,color:['#AD48E6','#F7F471' ,'#6AF5DE']
+                };
+
+
+                // 使用刚指定的配置项和数据显示图表。
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+
+	<script>
+//		var app = new Vue({
+//			el: '#app',
+//			data: {
+//				message: 'Hello Vue!'
+//			},
+//			created: function () {
+//				var url = 'http://api.k780.com/?app=weather.future&weaid=%E5%8D%97%E5%AE%81&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json'
+//				this.$http.get(url).then(m=>console.log(m.data));
+//			}
+//		})
+
+
+	</script>
+</body>
+
+<script type="text/javascript">
+// 天气预报js
+
+	// var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + '南宁' + "&day=0&dfc=3";
+	// var url = "http://wthrcdn.etouch.cn/weather_mini?city=" + '南宁';
+    // var url = "http://api.k780.com/?app=weather.future&weaid=222&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json";
+    // var url = "http://api.map.baidu.com/telematics/v3/weather?location=%E5%98%89%E5%85%B4&output=json&ak=B5680cb3b4fb77e505ae9a43100e8112";
+    // var url = "http://wthrcdn.etouch.cn/WeatherApi?citykey=101010100";
+    var url = "http://test.66diqiu.com/api/bigscreen/weather?cityname=桂林";
+        $.ajax({
+            // url: url,
+            // dataType: "jsonp",
+            // scriptCharset: "gbk",
+            type: "get",
+	        async: true,
+	        url: url,
+	        xhrFields: {
+	          withCredentials: true
+	        },
+	        dataType: "jsonp",
+	        jsonp: "callback",
+	        jsonpCallback:"myHandler",
+            success: function (data) {
+            	var res = data.result;
+                var pingjun = '平均气温'+Math.round((res[0].temp_high*1+res[0].temp_low*1+res[1].temp_high*1+res[1].temp_low*1+res[2].temp_high*1+res[2].temp_low*1+res[3].temp_high*1+res[3].temp_low*1+res[4].temp_high*1+res[4].temp_low*1)/10)+'℃';
+                $('.pingjun').text(pingjun);
+
+                $('.no1 p:eq(1)').text(res[0].temp_low+'℃~'+res[0].temp_high+'℃');
+                $('.no2 p:eq(1)').text(res[1].temp_low+'℃~'+res[1].temp_high+'℃');
+                $('.no3 p:eq(1)').text(res[2].temp_low+'℃~'+res[2].temp_high+'℃');
+                $('.no4 p:eq(1)').text(res[3].temp_low+'℃~'+res[3].temp_high+'℃');
+                $('.no5 p:eq(1)').text(res[4].temp_low+'℃~'+res[4].temp_high+'℃');
+
+                $('.no1 p:eq(2)').text(res[0].weather);
+                $('.no2 p:eq(2)').text(res[1].weather);
+                $('.no3 p:eq(2)').text(res[2].weather);
+                $('.no4 p:eq(2)').text(res[3].weather);
+                $('.no5 p:eq(2)').text(res[4].weather);
+
+                $('.no1 p:eq(3)').text(res[0].winp);
+                $('.no2 p:eq(3)').text(res[1].winp);
+                $('.no3 p:eq(3)').text(res[2].winp);
+                $('.no4 p:eq(3)').text(res[3].winp);
+                $('.no5 p:eq(3)').text(res[4].winp);
+
+                $('.no1 p:eq(4)').text(res[0].wind);
+                $('.no2 p:eq(4)').text(res[1].wind);
+                $('.no3 p:eq(4)').text(res[2].wind);
+                $('.no4 p:eq(4)').text(res[3].wind);
+                $('.no5 p:eq(4)').text(res[4].wind);
+
+                // $('.no1 p:eq(5)').text(res[0].week);
+                // $('.no2 p:eq(5)').text(res[1].week);
+                // $('.no3 p:eq(5)').text(res[2].week);
+                // $('.no4 p:eq(5)').text(res[3].week);
+                // $('.no5 p:eq(5)').text(res[4].week);
+
+
+                if(res[0].weatid=='1'){//晴
+                	$('.no1 i').addClass('icon-sun');
+                }else if(res[0].weatid=='2'){//多云
+                	$('.no1 i').addClass('icon-tianqiqing');
+                }else if(res[0].weatid=='3'){//阴
+                	$('.no1 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no1 i').addClass('icon-tianqi1');
+                }
+
+                if(res[1].weatid=='1'){//晴
+                	$('.no2 i').addClass('icon-sun');
+                }else if(res[1].weatid=='2'){//多云
+                	$('.no2 i').addClass('icon-tianqiqing');
+                }else if(res[1].weatid=='3'){//阴
+                	$('.no2 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no2 i').addClass('icon-tianqi1');
+                }
+
+                if(res[2].weatid=='1'){//晴
+                	$('.no3 i').addClass('icon-sun');
+                }else if(res[2].weatid=='2'){//多云
+                	$('.no3 i').addClass('icon-tianqiqing');
+                }else if(res[2].weatid=='3'){//阴
+                	$('.no3 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no3 i').addClass('icon-tianqi1');
+                }
+
+                if(res[3].weatid=='1'){//晴
+                	$('.no4 i').addClass('icon-sun');
+                }else if(res[3].weatid=='2'){//多云
+                	$('.no4 i').addClass('icon-tianqiqing');
+                }else if(res[3].weatid=='3'){//阴
+                	$('.no4 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no4 i').addClass('icon-tianqi1');
+                }
+
+                if(res[4].weatid=='1'){//晴
+                	$('.no5 i').addClass('icon-sun');
+                }else if(res[4].weatid=='2'){//多云
+                	$('.no5 i').addClass('icon-tianqiqing');
+                }else if(res[4].weatid=='3'){//阴
+                	$('.no5 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no5 i').addClass('icon-tianqi1');
+                }
+
+
+
+                //接口返回的天气对应天气weatid转weatid1(晴转多云)
+                var weatherid = [
+		                {"weatid":"1","weather":"晴","weather_icon":"0"},
+		                {"weatid":"2","weather":"多云","weather_icon":"1"},
+		                {"weatid":"3","weather":"阴","weather_icon":"2"},
+		                {"weatid":"4","weather":"阵雨","weather_icon":"3"},
+		                {"weatid":"5","weather":"雷阵雨","weather_icon":"4"},
+		                {"weatid":"6","weather":"雷阵雨有冰雹","weather_icon":"5"},
+		                {"weatid":"7","weather":"雨夹雪","weather_icon":"6"},
+		                {"weatid":"8","weather":"小雨","weather_icon":"7"},
+		                {"weatid":"9","weather":"中雨","weather_icon":"8"},
+		                {"weatid":"10","weather":"大雨","weather_icon":"9"},
+		                {"weatid":"11","weather":"暴雨","weather_icon":"10"},
+		                {"weatid":"12","weather":"大暴雨","weather_icon":"11"},
+		                {"weatid":"13","weather":"特大暴雨","weather_icon":"12"},
+		                {"weatid":"14","weather":"阵雪","weather_icon":"13"},
+		                {"weatid":"15","weather":"小雪","weather_icon":"14"},
+		                {"weatid":"16","weather":"中雪","weather_icon":"15"},
+		                {"weatid":"17","weather":"大雪","weather_icon":"16"},
+		                {"weatid":"18","weather":"暴雪","weather_icon":"17"},
+		                {"weatid":"19","weather":"雾","weather_icon":"18"},
+		                {"weatid":"20","weather":"冻雨","weather_icon":"19"},
+		                {"weatid":"21","weather":"沙尘暴","weather_icon":"20"},
+		                {"weatid":"22","weather":"小雨-中雨","weather_icon":"21"},
+		                {"weatid":"23","weather":"中雨-大雨","weather_icon":"22"},
+		                {"weatid":"24","weather":"大雨-暴雨","weather_icon":"23"},
+		                {"weatid":"25","weather":"暴雨-大暴雨","weather_icon":"24"},
+		                {"weatid":"26","weather":"大暴雨-特大暴雨","weather_icon":"25"},
+		                {"weatid":"27","weather":"小雪-中雪","weather_icon":"26"},
+		                {"weatid":"28","weather":"中雪-大雪","weather_icon":"27"},
+		                {"weatid":"29","weather":"大雪-暴雪","weather_icon":"28"},
+		                {"weatid":"30","weather":"浮尘","weather_icon":"29"},
+		                {"weatid":"31","weather":"扬沙","weather_icon":"30"},
+		                {"weatid":"32","weather":"强沙尘暴","weather_icon":"31"},
+		                {"weatid":"33","weather":"霾","weather_icon":"53"}
+		                ];
+                // console.log(res[0].weather.indexOf("晴"));
+                console.log(res);
+            }
+        });	
+
+
+</script>
+
+
+<!-- item9 -->
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+	$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=9',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                $('#item9 li:eq(0)').find('b').text(json.data.all_column[1][1]);
+                $('#item9 li:eq(1)').find('b').text(json.data.all_column[1][2]);
+                $('#item9 li:eq(2)').find('b').text(json.data.all_column[1][3]);
+
+
+            }
+        });   
+</script>
+<script>
+    window.addEventListener("resize", function () {
+        myChart.resize();
+    });
+</script>
+</html>

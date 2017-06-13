@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>广西城市热搜分析</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/ecStat.min.js" type="text/javascript"></script>
+	<script src="js/china.js" type="text/javascript"></script>
+	<script src="js/gx.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_vsomejrxine6zuxr.css">
+</head>
+<body>
+    <div class="containerWrap clearfix resouWrap">
+		<!--标题-->
+		<div class="gx-title box">
+			<h1>广西城市热搜分析</h1>
+			<div class="nav">
+				<a href="javascript:;"  class="menu menu-list">
+					<i class="iconfont icon-dh"></i> 导航
+				</a>
+				<a href="index.html" class="menu menu-index">
+					<i class="iconfont icon-index"></i> 返回首页
+				</a>
+			</div>
+			<!--下拉菜单-->
+			<div class="menu-box none">
+				<ul>
+					<li><a href="count.html">全部统计</a></li>
+					<li><a href="list.html">新闻资讯列表</a></li>
+					<li><a href="profile.html">网络关注度排名</a></li>
+					<li><a href="scenic.html">广西景区排名</a></li>
+					<li><a href="weather.html">气象环保分析</a></li>
+					<li><a href="keliu.html">广西客流来源分布</a></li>
+					<li><a href="hot_search.html">广西城市热搜分析</a></li>
+					<li><a href="mudidi.html">广西游客出境/国内目的地分析</a></li>
+					<li><a href="baidu_hot.html">百度旅游关注热词分析</a></li>
+					<li><a href="manyidu.html">游客满意度统计分析</a></li>
+					<li><a href="zixun.html">同业担保交易实时</a></li>
+					<li><a href="hetong.html">电子合同出游实时</a></li>
+					<li><a href="website.html">旅行社网站使用统计</a></li>
+					<li><a href="wei_card.html">旅行社从业人员微名片分布</a></li>
+					<li><a href="chengxin_qiye.html">诚信企业分析</a></li>
+					<li><a href="xiaofei_nianling.html">游客消费水平及年龄分析</a></li>
+					<li><a href="shuangchuang.html">双创人群统计</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="resou-main box">
+			<div class="resou-main-top box" id="item1">
+
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+			</div>
+			<div class="resou-main-btm box" id="box1">
+
+			</div>
+		</div>
+		<div class="resou-main box">
+			<div class="resou-main-top box resou-main-top1" id="item2">
+				<h1>[ 昨日省内游客搜索热词排行 ]<span class="fen-color"> top10</span></h1>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+				<div class="list box">
+					漓江<b class="price">105668</b>
+				</div>
+			</div>
+			<div class="resou-main-btm box" id="box2">
+
+			</div>
+		</div>
+    </div>
+</body>
+
+<!--  box1 -->
+<script type="text/javascript">
+	$.ajax({
+		async: false,
+		url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=27',
+		type: "GET",
+		dataType: 'jsonp',
+		timeout: 5000,
+		success: function (json) {
+			// 基于准备好的dom，初始化echarts实例
+
+			var myChart = echarts.init(document.getElementById('box1'), 'macarons');
+			option = {
+				title: {
+					text: "[ 昨日省内游客各地市范围内热词搜索统计 ]",
+					textStyle: {
+						fontWeight: "normal",
+						color: "rgb(255, 255, 255)"
+					},
+                    x: "3.5%",
+					y: "top"
+				},
+				tooltip: {
+					trigger: "axis"
+				},
+				toolbox: {
+					feature: {
+						mark: {
+							show: true
+						},
+						dataView: {
+							show: true,
+							readOnly: true
+						},
+						magicType: {
+							show: false,
+							type: ["line", "bar"]
+						},
+						restore: {
+							show: true
+						},
+						saveAsImage: {
+							show: true
+						}
+					},
+					show: false
+				},
+				calculable: true,
+				xAxis: [
+					{
+						type: "category",
+//						data: ["南宁", "南宁", "南宁", "南宁", "南宁", "南宁", "南宁", "南宁", "南宁", "南宁"],
+						data: json.data.all_column[0],
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							show: false
+						}
+					}
+				],
+				yAxis: [
+					{
+						type: "value",
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+							show: false
+						},
+						nameTextStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						}
+					}
+				],
+				series: [
+					{
+						name: "搜索指数",
+						type: "bar",
+						data: json.data.all_column[1],
+						itemStyle: {
+							normal: {
+								color: "rgb(128, 230, 255)",
+								label: {
+									show: true,
+									position: "insideTop",
+									textStyle: {
+										color: "rgb(0, 0, 0)"
+									}
+								}
+							}
+						}
+					}
+				],
+				grid: {
+					borderWidth: 0,
+					x:"9%",
+					x2:"2%"
+				}
+			}
+
+			;
+			myChart.setOption(option);
+		}
+	});
+
+</script>
+
+<!-- box2 -->
+<script type="text/javascript">
+	$.ajax({
+		async: false,
+		url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=29',
+		type: "GET",
+		dataType: 'jsonp',
+		timeout: 5000,
+		success: function (json) {
+			// 基于准备好的dom，初始化echarts实例
+
+			var myChart = echarts.init(document.getElementById('box2'), 'macarons');
+			option = {
+				title: {
+					text: "[ 昨日省外游客各地市范围内热词搜索统计 ]",
+					textStyle: {
+						fontWeight: "normal",
+						color: "rgb(255, 255, 255)"
+					},
+                    x: "3.5%",
+					y: "top"
+				},
+				tooltip: {
+					trigger: "axis"
+				},
+				toolbox: {
+					feature: {
+						mark: {
+							show: true
+						},
+						dataView: {
+							show: true,
+							readOnly: true
+						},
+						magicType: {
+							show: false,
+							type: ["line", "bar"]
+						},
+						restore: {
+							show: true
+						},
+						saveAsImage: {
+							show: true
+						}
+					},
+					show: false
+				},
+				calculable: true,
+				xAxis: [
+					{
+						type: "category",
+						data: json.data.all_column[0],
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							show: false
+						}
+					}
+				],
+				yAxis: [
+					{
+						type: "value",
+						splitLine: {
+							show: false
+						},
+						axisLine: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						},
+						axisTick: {
+							lineStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+							show: false
+						},
+						nameTextStyle: {
+							color: "rgb(255, 255, 255)"
+						},
+						axisLabel: {
+							textStyle: {
+								color: "rgb(255, 255, 255)"
+							}
+						}
+					}
+				],
+				series: [
+					{
+						name: "搜索指数",
+						type: "bar",
+						data: json.data.all_column[1],
+						itemStyle: {
+							normal: {
+								color: "rgb(11, 241, 2)",
+								label: {
+									show: true,
+									position: "insideTop",
+									textStyle: {
+										color: "rgb(0, 0, 0)"
+									}
+								}
+							}
+						}
+					}
+				],
+				grid: {
+					borderWidth: 0,
+                    x:"9%",
+                    x2:"2%"
+				}
+			}
+
+			;
+			myChart.setOption(option);
+		}
+	});
+
+</script>
+
+
+<script>
+	$.ajax({
+		async: false,
+		url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=5',
+		type: "GET",
+		dataType: 'jsonp',
+		timeout: 5000,
+		success: function (json) {
+			var html ='				<h1>[ 昨日省内游客搜索热词排行 ]<span class="fen-color"> top10</span></h1>'
+			console.log(json.data.name_value)
+			for(var item of json.data.name_value) {
+				html += `<div class="list box">
+							<span style="display:inline-block;width:60%;line-height: 5.5vh;" class="odd-ellipsis">${item.name}</span><b class="price">${item.value}</b>
+						</div>`
+			}
+			$('#item1').html(html)
+		}
+	});
+</script>
+
+<script>
+	$.ajax({
+		async: false,
+		url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=28',
+		type: "GET",
+		dataType: 'jsonp',
+		timeout: 5000,
+		success: function (json) {
+			var html ='				<h1>[ 昨日省外游客搜索热词排行 ]<span class="fen-color"> top10</span></h1>'
+			console.log(json.data.name_value)
+			for(var item of json.data.name_value) {
+				html += `<div class="list box">
+							<span style="display:inline-block;width:60%;line-height: 5.5vh;" class="odd-ellipsis">${item.name}</span><b class="price">${item.value}</b>
+						</div>`
+			}
+			$('#item2').html(html)
+		}
+	});
+</script>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

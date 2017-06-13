@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>电子合同数量、人数、热门目的地及景区统计</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/ecStat.min.js" type="text/javascript"></script>
+	<script src="js/china.js" type="text/javascript"></script>
+	<script src="js/gx.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_9po9387gv3elv7vi.css">
+</head>
+<body><div class="containerWrap clearfix hetongWrap">
+		<!--标题-->
+		<div class="gx-title box">
+			<h1>电子合同出游实时</h1>
+			<div class="nav">
+				<a href="javascript:;"  class="menu menu-list">
+					<i class="iconfont icon-dh"></i> 导航
+				</a>
+				<a href="index.html" class="menu menu-index">
+					<i class="iconfont icon-index"></i> 返回首页
+				</a>
+			</div>
+			<!--下拉菜单-->
+			<div class="menu-box none">
+				<ul>
+					<li><a href="count.html">全部统计</a></li>
+					<li><a href="list.html">新闻资讯列表</a></li>
+					<li><a href="profile.html">网络关注度排名</a></li>
+					<li><a href="scenic.html">广西景区排名</a></li>
+					<li><a href="weather.html">气象环保分析</a></li>
+					<li><a href="keliu.html">广西客流来源分布</a></li>
+					<li><a href="hot_search.html">广西城市热搜分析</a></li>
+					<li><a href="mudidi.html">广西游客出境/国内目的地分析</a></li>
+					<li><a href="baidu_hot.html">百度旅游关注热词分析</a></li>
+					<li><a href="manyidu.html">游客满意度统计分析</a></li>
+					<li><a href="zixun.html">同业担保交易实时</a></li>
+					<li><a href="hetong.html">电子合同出游实时</a></li>
+					<li><a href="website.html">旅行社网站使用统计</a></li>
+					<li><a href="wei_card.html">旅行社从业人员微名片分布</a></li>
+					<li><a href="chengxin_qiye.html">诚信企业分析</a></li>
+					<li><a href="xiaofei_nianling.html">游客消费水平及年龄分析</a></li>
+					<li><a href="shuangchuang.html">双创人群统计</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="hetong-main box" style="position: relative">
+			<h1 class="title" style="font-size: 18px;font-weight: normal;">[ 电子合同成交量统计 ]</h1>
+			<div class="hetong-main-list box">
+				<div class="hetong-main-list-l box left" id="box1">
+					<i class="iconfont icon-renshu lan-color"></i>
+					<p>合同人数：1218人</p>
+					<p>订单人数：951511人</p>
+				</div>
+				<div class="hetong-main-list-r box left" id="item1">
+
+				</div>
+			</div>
+			<div class="hetong-main-list">
+				<div class="hetong-main-list-l box left" id="box2">
+					<i class="iconfont icon-jine y-color"></i>
+					<p>合同金额：1218元</p>
+					<p>订单金额：951511元</p>
+				</div>
+				<div class="hetong-main-list-r box left" id="item2">
+
+				</div>
+			</div>
+			<div class="hetong-main-list">
+				<div class="hetong-main-list-l box left" id="box3">
+					<i class="iconfont icon-hetong g-color"></i>
+					<p>合同份数：1218份</p>
+					<p>订单数量：951511个</p>
+				</div>
+				<div class="hetong-main-list-r box left" id="item3">
+
+				</div>
+			</div>
+		</div>
+		<div class="hetong-main box" id="item4">
+
+		</div>
+		<div class="hetong-main box" id="item5">
+
+		</div>
+    </div>
+
+
+	<!-- item1 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=10',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                $('#box1 p:eq(0)').text('合同人数：'+json.data.all_sum[1]+'人');
+                $('#box1 p:eq(1)').text('订单人数：'+json.data.all_sum[2]+'人');
+                var myChart = echarts.init(document.getElementById('item1'), '');
+                var option = {
+						tooltip: {
+							trigger: "axis"
+						},
+						calculable: true,
+						legend: {
+							data: ["合同人数", "订单人数"],
+							textStyle: {
+								color: 'white',
+
+							}
+						},
+						xAxis: [
+							{
+								type: "category",
+								boundaryGap: false,
+								data: json.data.all_column[0],
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+                                axisLine: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisLabel: {
+                                    textStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisTick: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+								scale: true,
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+                                axisLine: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisLabel: {
+                                    textStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+                                axisTick: {
+                                    lineStyle: {
+                                        color: "rgb(255, 255, 255)"
+                                    }
+                                },
+								scale: true,
+								// splitNumber: 1,
+							}
+						],
+						series: [
+							{
+								name: "合同人数",
+								type: "line",
+								data: json.data.all_column[1]
+							},
+							{
+								name: "订单人数",
+								type: "line",
+								data: json.data.all_column[2]
+							}
+						],
+                    	color:['#fe72ec','#44e2ff' ,'#ffac28' ,'#1660e8' ,'#9f86ff' ,'#ff6156' ,'#50ff00' ,'#E8E349', '#ffffff'],
+                    	grid:{
+	                    	x:'20%',
+	                    	x2:"8%",
+	                    	y:"15%"
+	                    }
+					};
+
+                myChart.setOption(option);
+            }
+        });
+
+
+	</script>
+
+	<!-- item2 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=39',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                $('#box2 p:eq(0)').text('合同金额：￥'+json.data.all_sum[1]+'元');
+                $('#box2 p:eq(1)').text('订单金额：￥'+json.data.all_sum[2]+'元');
+                var myChart = echarts.init(document.getElementById('item2'), '');
+                var option = {
+						tooltip: {
+							trigger: "axis"
+						},
+						 legend: {
+						 	data: ["合同金额", "订单金额"],
+						 	textStyle: {
+						 		color: 'white',
+
+						 	}
+						 },
+						textStyle: {
+							color: 'white'
+						},
+						calculable: true,
+						xAxis: [
+							{
+								type: "category",
+								boundaryGap: false,
+								data: json.data.all_column[0],
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+								splitNumber: 4,
+							}
+						],
+						series: [
+							{
+								name: "合同金额",
+								type: "line",
+								data: json.data.all_column[1]
+							},
+							{
+								name: "订单金额",
+								type: "line",
+								data: json.data.all_column[2]
+							}
+						],
+						color:['#50ff00' ,'#E8E349', '#1660e8' ],
+						grid:{
+	                    	x:'20%',
+	                    	x2:"8%",
+	                    	y:"15%"
+	                    }
+					};
+
+                myChart.setOption(option);
+            }
+        });
+
+
+	</script>
+
+	<!-- item3 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=40',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                $('#box3 p:eq(0)').text('合同份数：'+json.data.all_sum[1]+'份');
+                $('#box3 p:eq(1)').text('订单数量：'+json.data.all_sum[2]+'个');
+                var myChart = echarts.init(document.getElementById('item3'), '');
+                var option = {
+						tooltip: {
+							trigger: "axis"
+						},
+						calculable: true,
+						legend: {
+							data: ["合同份数", "订单数量"],
+							textStyle: {
+								color: 'white',
+
+							}
+						},
+						xAxis: [
+							{
+								type: "category",
+								boundaryGap: false,
+								data: json.data.all_column[0],
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+								splitNumber: 4,
+							}
+						],
+						series: [
+							{
+								name: "合同份数",
+								type: "line",
+								data: json.data.all_column[1]
+							},
+							{
+								name: "订单数量",
+								type: "line",
+								data: json.data.all_column[2]
+							}
+						],
+                    	color:['#35d21b' , '#1660e8' ],
+	                    grid:{
+	                    	x:'20%',
+	                    	x2:"8%",
+	                    	y:"15%"
+	                    }
+					};
+
+                myChart.setOption(option);
+            }
+        });
+
+	</script>
+
+<!-- item4 -->
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+
+	$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=41',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                var myChart = echarts.init(document.getElementById('item4'), '');
+                var option = {
+						title: {
+							text: "[ 热门景区统计 ]",
+							x: 'left',
+							y: 'top',
+							textStyle: {
+								color: 'white', 
+								fontWeight: "normal"
+							}
+						},
+						tooltip: {
+							trigger: "item",
+							formatter: "{a} <br/>{b} : {c} ({d}%)"
+						},
+						legend: {
+							orient: "vertical",
+							x: "left",
+							y:"10%",
+							data: json.data.all_column[0],
+							textStyle: {
+								color: 'white'
+							}
+						},
+						calculable: true,
+						series: [
+							{
+								name: "访问来源",
+								type: "pie",
+								radius: "40%",
+								center: ["55%", "65%"],
+								data: json.data.name_value,
+								itemStyle: {
+									normal: {
+										label: {
+											formatter: "{b}：{d}%"
+										}
+									}
+								}
+							}
+						]  ,color:['#fe72ec','#44e2ff' ,'#ffac28' ,'#1660e8' ,'#9f86ff' ,'#ff6156' ,'#50ff00' ,'#E8E349', '#ffffff']
+					};
+
+                myChart.setOption(option);
+            }
+        });
+
+</script>
+
+<!-- item5 -->
+<script type="text/javascript">
+	// 基于准备好的dom，初始化echarts实例
+
+	$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=42',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                var myChart = echarts.init(document.getElementById('item5'), '');
+                var option = {
+						title: {
+							text: "[ 热门目的地排行 ]",
+							textStyle: {
+								color: 'white',
+								fontWeight: "normal"
+							}
+						},
+						tooltip: {
+							trigger: "axis"
+						},
+						legend: {
+							show:false,
+							data: ['热门目的地'],
+							textStyle: {
+								color: '#ffffff',
+								x: "top",
+								y: "center"
+
+							},
+							orient: "vertical",
+
+						},
+						calculable: true,
+						xAxis: [
+							{
+								type: "category",
+								data: json.data.all_column[0],
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)",
+
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									},
+									interval:0,//横轴信息全部显示
+									rotate:-30,//-30度角倾斜显示
+								},
+								axisTick: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+							}
+						],
+						series: [
+							{
+								name: "热门目的地",
+								type: "bar",
+								data: json.data.all_column[1]
+							}
+						]
+					,color:['#46FFD3']
+					};
+
+                myChart.setOption(option);
+            }
+        });
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>游客满意度统计分析</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/ecStat.min.js" type="text/javascript"></script>
+	<script src="js/china.js" type="text/javascript"></script>
+	<script src="js/gx.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_vsomejrxine6zuxr.css">
+</head>
+<body>
+    <div class="containerWrap clearfix manyiWrap">
+		<!--标题-->
+		<div class="gx-title box">
+			<h1>游客满意度统计分析</h1>
+			<div class="nav">
+				<a href="javascript:;"  class="menu menu-list">
+					<i class="iconfont icon-dh"></i> 导航
+				</a>
+				<a href="index.html" class="menu menu-index">
+					<i class="iconfont icon-index"></i> 返回首页
+				</a>
+			</div>
+			<!--下拉菜单-->
+			<div class="menu-box none">
+				<ul>
+					<li><a href="count.html">全部统计</a></li>
+					<li><a href="list.html">新闻资讯列表</a></li>
+					<li><a href="profile.html">网络关注度排名</a></li>
+					<li><a href="scenic.html">广西景区排名</a></li>
+					<li><a href="weather.html">气象环保分析</a></li>
+					<li><a href="keliu.html">广西客流来源分布</a></li>
+					<li><a href="hot_search.html">广西城市热搜分析</a></li>
+					<li><a href="mudidi.html">广西游客出境/国内目的地分析</a></li>
+					<li><a href="baidu_hot.html">百度旅游关注热词分析</a></li>
+					<li><a href="manyidu.html">游客满意度统计分析</a></li>
+					<li><a href="zixun.html">同业担保交易实时</a></li>
+					<li><a href="hetong.html">电子合同出游实时</a></li>
+					<li><a href="website.html">旅行社网站使用统计</a></li>
+					<li><a href="wei_card.html">旅行社从业人员微名片分布</a></li>
+					<li><a href="chengxin_qiye.html">诚信企业分析</a></li>
+					<li><a href="xiaofei_nianling.html">游客消费水平及年龄分析</a></li>
+					<li><a href="shuangchuang.html">双创人群统计</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="manyi-main box" id="item1">
+
+		</div>
+		<div class="manyi-main1 box">
+			<div class="manyi-main1-top-l box" id="item2">
+
+			</div>
+			<div class="manyi-main1-top-r box" id="item3">
+
+			</div>
+			<div class="manyi-main1-top-btm box" id="item4">
+
+			</div>
+		</div>
+		<div class="manyi-main box" id="item5">
+
+		</div>
+    </div>
+
+
+	<!-- item1 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=8',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                // console.log(json);
+                var myChart = echarts.init(document.getElementById('item1'), '');
+                var option ={
+						title: {
+							// text: "2017年第一季度",
+
+							// textStyle:{
+							// 	color:"#46ffd3"
+							// }
+
+							text: "[设区市游客综合满意度排名]",
+					        textStyle: {
+					            fontWeight: "normal",
+					            color: "rgb(255, 255, 255)",
+					        },
+					        y: "top",
+					        subtext: "2017年第一季度",
+					        x: "center",
+					        subtextStyle: {
+					            color: "#46ffd3",
+					            align: "center",
+					            baseline: "top"
+					        }
+						},
+						tooltip: {
+							show: true
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								dataView: {
+									readOnly: true
+								},
+								magicType: {
+									type: ["line", "bar"],
+									show: false
+								}
+							}
+						},
+						xAxis: [
+							{
+								type: "value",
+								axisLine: {
+									show: false
+								},
+								axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+								splitArea: {
+									show: false
+								},
+								splitLine: {
+									show: false,
+									lineStyle:{
+										color:"#fff"
+									}
+								},
+								position: "top",
+								axisTick: {show:false},
+							}
+						],
+						yAxis: [
+							{
+								type: "category",
+								data: json.data.all_column[0],
+								axisLine: {
+									show: false
+								},
+								axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+								splitLine: {
+									show: false,
+									lineStyle:{
+										color:"#fff"
+									}
+								},
+								splitArea: {
+									show: false
+								},
+								axisTick: {show:false},
+							}
+						],
+						series: [
+							{
+								name: "满意度",
+								type: "bar",
+								data: json.data.all_column[1],
+								itemStyle: {
+					                normal: {
+					                    label: {
+					                        show: true,
+					                        position: "right",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    },
+					                    color: "#46ffd3"
+					                }
+					            },
+					            barWidth: 18
+							}
+						],
+						grid:{
+							boundaryGap:1,
+							y:"13%",
+							x:"15%"
+						}
+					};
+                myChart.setOption(option);
+            }
+        });
+
+
+	</script>
+
+	<!-- item2 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=34',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                // console.log(json);
+                var myChart = echarts.init(document.getElementById('item2'), '');
+                var option = {
+						title: {
+							text: "[ 第一季度设区市游客满意度指数分析 ]",
+							x: "2%",
+							textStyle: {
+					            color: "rgb(255, 255, 255)",
+					            fontWeight: "normal"
+					        }
+						},
+						tooltip: {
+							trigger: "axis",
+							show: true,
+							textStyle: {
+								align: "left"
+							}
+						},
+						legend: {
+							data: ["问卷满意度", "舆情满意度", "投诉满意度"],
+							x: "2%",
+							y: "8%",
+					        textStyle: {
+					            color: "rgb(255, 255, 255)"
+					        }
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								mark: {
+									show: false
+								},
+								dataView: {
+									show: true,
+									readOnly: true
+								},
+								magicType: {
+									show: false,
+									type: ["line", "bar"]
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							},
+							x: "right"
+						},
+						calculable: true,
+						xAxis: [
+							{
+								type: "category",
+								boundaryGap: false,
+								data: json.data.all_column[0],
+								axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            axisLine: {
+					                lineStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            axisTick: {show:false},
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								scale:true,
+								axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            axisLine: {
+					                lineStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            splitLine: {
+					                show: false
+					            },
+					            axisTick: {show:false},
+					            
+							}
+						],
+						series: [
+							{
+								name: "问卷满意度",
+								type: "line",
+								data: json.data.all_column[1],
+								itemStyle: {
+					                normal: {
+					                    lineStyle: {
+					                        color: "#FE74ED"
+					                    }
+					                }
+					            }
+							},
+							{
+								name: "舆情满意度",
+								type: "line",
+								data: json.data.all_column[2],
+								itemStyle: {
+					                normal: {
+					                    lineStyle: {
+					                        color: "#FDAC25"
+					                    }
+					                }
+					            }
+							},
+							{
+								type: "line",
+								name: "投诉满意度",
+								data: json.data.all_column[3],
+								itemStyle: {
+					                normal: {
+					                    lineStyle: {
+					                        color: "#46FED2"
+					                    }
+					                }
+					            }
+							}
+						],
+						grid:{
+							x:"10%",
+							x2:"5%"
+						}
+					};
+                myChart.setOption(option);
+            }
+        });
+
+
+	</script>
+
+	<!-- item3 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=35',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                var myChart = echarts.init(document.getElementById('item3'), '');
+                var option = {
+					    title : {
+					        text: '[第一季度游客满意度指数统计]',
+					        textStyle: {
+					            color: "rgb(255, 255, 255)",
+					            fontWeight: "normal"
+					        }
+					    },
+					    tooltip : {
+					        trigger: 'axis'
+					    },
+					    legend: {
+					    	// show:false,
+					        data:[
+					            '区市游客满意度指数(最高)','名县(含创建县)游客满意度指数(最高)'
+					        ],
+					        x:'left',
+							y:30,
+					        textStyle: {
+								color: 'white',
+							}
+					    },
+					    calculable : true,
+					    grid: {y: 70, y2:30, x2:20},
+					    xAxis : [
+					        {
+					            type : 'category',
+					            data : ['问卷满意度','舆情满意度','投诉满意度','综合满意度'],
+					            axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            axisLine: {
+					                lineStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            axisTick: {show:false},
+
+					        },
+					        {
+					            type : 'category',
+					            axisLine: {show:false},
+					            axisTick: {show:false},
+					            axisLabel: {show:false},
+					            splitArea: {show:false},
+					            splitLine: {show:false},
+					            data : ['问卷满意度','舆情满意度','投诉满意度','综合满意度']
+					        },
+
+					    ],
+					    yAxis : [
+					        {
+					            type : 'value',
+					            axisLabel:{formatter:'{value} ms'},
+					            axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            axisLine: {
+					                lineStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+					            splitLine: {
+					                show: false
+					            },
+					            scale:false,
+					            axisTick: {show:false},
+
+					        }
+					    ],
+					    series : [
+					    	{
+					            name:'区市游客满意度指数(最高)',
+					            type:'bar',
+					            xAxisIndex:1,
+					            itemStyle: {normal: {color:'rgba(181,195,52,0.5)', label:{show:true}}},
+					            data:json.data.content_no_first[2],
+					            itemStyle: {
+					                normal: {
+					                    color: "#FECD7E",
+					                    label: {
+					                        show: true,
+					                        position: "Top",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    }
+					                }
+					            },
+					            barWidth: 40
+					        },
+					        {
+					            name:'名县(含创建县)游客满意度指数(最高)',
+					            type:'bar',
+					            xAxisIndex:1,
+					            itemStyle: {normal: {color:'rgba(252,206,16,0.5)', label:{show:true,formatter:function(p){return p.value > 0 ? (p.value +'+'):'';}}}},
+					            data:json.data.content_no_first[3],
+					            itemStyle: {
+					                normal: {
+					                    color: "#B1FAE9",
+					                    label: {
+					                        show: true,
+					                        position: "Top",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    }
+					                }
+					            },
+					            barWidth: 40
+					        },
+					        {
+					            name:'区市游客满意度指数(平均)',
+					            type:'bar',
+					            itemStyle: {normal: {color:'rgba(181,195,52,1)', label:{show:true,textStyle:{color:'#27727B'}}}},
+					            data:json.data.content_no_first[0],
+					            itemStyle: {
+					                normal: {
+					                    color: "#FFAC28",
+					                    label: {
+					                        show: true,
+					                        position: "insideTop",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    }
+					                }
+					            },
+					            barWidth: 40
+					        },
+					        {
+					            name:'名县(含创建县)游客满意度指数(平均)',
+					            type:'bar',
+					            itemStyle: {normal: {color:'rgba(252,206,16,1)', label:{show:true,textStyle:{color:'#E87C25'}}}},
+					            data:json.data.content_no_first[1],
+					            itemStyle: {
+					                normal: {
+					                    color: "#3DF3C8",
+					                    label: {
+					                        show: true,
+					                        position: "insideTop",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    }
+					                }
+					            },
+					            barWidth: 40
+					        }
+					        
+					    ],
+					    grid:{
+					    	x:"7%",
+					    	x2:"8%"
+					    }
+					};
+					                    
+                myChart.setOption(option);
+            }
+        });
+
+
+	</script>
+
+	<!-- item4 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=36',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                // console.log(json);
+                var myChart = echarts.init(document.getElementById('item4'), '');
+                var option = {
+						title: {
+							text: "[ 第一季度特色旅游名县（含创建县）游客满意度指数分析 ]",
+							textStyle: {
+								color: 'white',
+								fontWeight: "normal"
+								//
+							},
+							x:"1%"
+						},
+						tooltip: {
+							trigger: "axis"
+						},
+						legend: {
+							data: ["问卷满意度", "舆情满意度",'投诉满意度'],
+							x: "1%",
+							y: "8%",
+							textStyle: {
+								color: 'white',
+							}
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								mark: {
+									show: true
+								},
+								dataView: {
+									show: true,
+									readOnly: true
+								},
+								magicType: {
+									show: false,
+									type: ["line", "bar"]
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: true,
+						xAxis: [
+							{
+								type: "category",
+								boundaryGap: false,
+								data: json.data.all_column[0],
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									show: false,
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								splitLine: {
+									lineStyle: {
+										color: "#000000",
+										type: "dashed"
+									},
+									show: false
+								},nameTextStyle: {
+								color: "rgb(255, 255, 255)"
+							},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									show: false,
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+
+								scale: true,
+							}
+						],
+						series: [
+							{
+								name: "问卷满意度",
+								type: "line",
+								data: json.data.all_column[1],
+								itemStyle: {
+					                normal: {
+					                    lineStyle: {
+					                        color: "#FE74ED"
+					                    }
+					                }
+					            }
+							},
+							{
+								name: "舆情满意度",
+								type: "line",
+								data: json.data.all_column[2],
+								itemStyle: {
+					                normal: {
+					                    lineStyle: {
+					                        color: "#FDAC25"
+					                    }
+					                }
+					            }
+							},
+							{
+								name: "投诉满意度",
+								type: "line",
+								data: json.data.all_column[3],
+								itemStyle: {
+					                normal: {
+					                    lineStyle: {
+					                        color: "#46FED2"
+					                    }
+					                }
+					            }
+							}
+						],
+						grid: {
+							x:'5%',
+							x2:"3%"
+						}
+					};
+                myChart.setOption(option);
+            }
+        });
+
+
+	</script>
+
+
+
+	<!-- item5 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=55',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                // console.log(json);
+                var myChart = echarts.init(document.getElementById('item5'), '');
+                var option ={
+						title: {
+							text: "[旅游名县游客综合满意度排名]",
+							textStyle: {
+								color: 'white',
+								fontWeight: "normal"
+							},
+							x:"center",
+							y:"top",
+							subtext: "第一季度(含创建县)",
+					        subtextStyle: {
+					            color: "#80E6FF",
+					            align: "center",
+					            baseline: "top"
+					        }
+						},
+						tooltip: {
+							show: false
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								dataView: {
+									readOnly: true
+								},
+								magicType: {
+									type: ["line", "bar"],
+									show: false
+								}
+							}
+						},
+						xAxis: [
+							{
+								axisLine: {
+									show: false
+								},
+								axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+								splitArea: {
+									show: false
+								},
+								splitLine: {
+									show: false,
+									lineStyle:{
+										color:"#fff"
+									}
+								},
+								position: "top",
+								axisTick: {show:false},
+							}
+						],
+						yAxis: [
+							{
+								type: "category",
+								data: json.data.all_column[0],
+								axisLine: {
+									show: false
+								},
+								axisLabel: {
+					                textStyle: {
+					                    color: "rgb(255, 255, 255)"
+					                }
+					            },
+								splitLine: {
+									show: false,
+									lineStyle:{
+										color:"#fff"
+									}
+								},
+								splitArea: {
+									show: false
+								},
+								axisTick: {show:false},
+							}
+						],
+						series: [
+							{
+								name: "满意度",
+								type: "bar",
+								data: json.data.all_column[1],
+								itemStyle: {
+					                normal: {
+					                    label: {
+					                        show: true,
+					                        position: "right",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    },
+					                    color: "#80E6FF"
+					                }
+					            },
+					            barWidth: 18
+							}
+						],
+						grid:{
+							boundaryGap:1,
+							y:"13%",
+							x:"15%"
+						}
+					};
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

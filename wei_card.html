@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>旅行社从业人员微名片分布</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/ecStat.min.js" type="text/javascript"></script>
+	<script src="js/china.js" type="text/javascript"></script>
+	<script src="js/guangxi.js" type="text/javascript"></script>
+	<script src="js/gx.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_fu2dmbkd70j54s4i.css">
+</head>
+<body>
+    <div class="containerWrap clearfix cardWrap">
+		<!--标题-->
+		<div class="gx-title box">
+			<h1>旅行社从业人员微名片分布</h1>
+			<div class="nav">
+				<a href="javascript:;"  class="menu menu-list">
+					<i class="iconfont icon-dh"></i> 导航
+				</a>
+				<a href="index.html" class="menu menu-index">
+					<i class="iconfont icon-index"></i> 返回首页
+				</a>
+			</div>
+			<!--下拉菜单-->
+			<div class="menu-box none">
+				<ul>
+					<li><a href="count.html">全部统计</a></li>
+					<li><a href="list.html">新闻资讯列表</a></li>
+					<li><a href="profile.html">网络关注度排名</a></li>
+					<li><a href="scenic.html">广西景区排名</a></li>
+					<li><a href="weather.html">气象环保分析</a></li>
+					<li><a href="keliu.html">广西客流来源分布</a></li>
+					<li><a href="hot_search.html">广西城市热搜分析</a></li>
+					<li><a href="mudidi.html">广西游客出境/国内目的地分析</a></li>
+					<li><a href="baidu_hot.html">百度旅游关注热词分析</a></li>
+					<li><a href="manyidu.html">游客满意度统计分析</a></li>
+					<li><a href="zixun.html">同业担保交易实时</a></li>
+					<li><a href="hetong.html">电子合同出游实时</a></li>
+					<li><a href="website.html">旅行社网站使用统计</a></li>
+					<li><a href="wei_card.html">旅行社从业人员微名片分布</a></li>
+					<li><a href="chengxin_qiye.html">诚信企业分析</a></li>
+					<li><a href="xiaofei_nianling.html">游客消费水平及年龄分析</a></li>
+					<li><a href="shuangchuang.html">双创人群统计</a></li>
+				</ul>
+			</div>
+			<div class="tongji clearfix box">
+				<div class="tj-item clearfix box">
+					<div>
+						<i class="iconfont icon-ren"></i>
+						<p>员工数量</p>
+					</div>
+					<div class="right"><span class="num1">10000人</span></div>
+				</div>
+				<div class="tj-item clearfix box">
+					<div>
+						<i class="iconfont icon-mingpian"></i>
+						<p>微名片数量</p>
+					</div>
+					<div class="right"><span class="num2">2500人</span></div>
+				</div>
+			</div>
+		</div>
+		<!--内容-->
+		<!--<div class="card-main1 box" id="item1">-->
+
+		<!--</div>-->
+		<div class="card-main box">
+			<div class="card-main-list box" id="item1" style="padding-top:5%"></div>
+			<div class="card-main-list box" id="item2"></div>
+		</div>
+		<div class="card-main box" id="item3">
+
+		</div>
+		<div class="card-main box" id="item4">
+
+		</div>
+    </div>
+
+	<!-- item1 -->
+	<script type="text/javascript">
+		// 基于准备好的dom，初始化echarts实例
+
+		$.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=12',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                $('.num1').text(json.data.all_column[1][0]+'人');
+                $('.num2').text(json.data.all_column[1][1]+'人');
+                var myChart = echarts.init(document.getElementById('item1'), '');
+                var option ={
+						title: {
+							text: "[ 旅行社占比统计 ]",
+							y: "top",
+							x: "left",
+							textStyle: {
+								color: "#fff",
+								// fontSize: 16
+								fontWeight: "normal"
+							}
+						},
+						textStyle: {
+							color: '#ffffff'
+						},
+						tooltip: {
+							trigger: "item",
+									formatter: "{a} <br/>{b} : {d}%"
+						},
+						legend: {
+							orient: "vertical",
+									x: "1%",y:30,
+									data: [json.data.all_column[0][2],json.data.all_column[0][3]],
+							textStyle: {
+								color: "#fff",
+							}
+						},
+						calculable: true,
+						series: [
+							{
+								name: "旅行社占比",
+								type: "pie",
+								radius: "50%",
+								center: ["50%", "50%"],
+								data: [json.data.name_value[2],json.data.name_value[3]],
+								itemStyle: {
+									normal: {
+										label: {
+											formatter: "{b}: {d}%"
+										}
+									}
+								},
+							}
+						],
+						color:['#A791FE','#46FFD3']
+					};
+
+                myChart.setOption(option);
+            }
+        });
+
+	</script>
+
+	<!-- item2 -->
+	<script type="text/javascript">
+
+
+
+
+        // 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=44',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                var myChart = echarts.init(document.getElementById('item2'), '');
+                var option =
+                    {
+                        title: {
+                            text: "[ 微名片城市占比统计 ]",
+                            y: "top",
+                            x: "left",
+                            textStyle: {
+                                color: "#fff",
+                                // fontSize: 16
+                                fontWeight: "normal"
+                            }
+                        },
+                        textStyle: {
+                            color: '#ffffff'
+                        },
+                        tooltip: {
+                            trigger: "item",
+                            formatter: "{a} <br/>{b} : {d}%"
+                        },
+                        legend: {
+                            orient: "vertical",
+                            x: "1%",y:30,
+                            data: json.data.all_column[0],
+                            textStyle: {
+                                color: "#fff",
+                                fontSize: 15
+                            }
+                        },
+                        toolbox: {
+                            show: false,
+                            feature: {
+                                mark: {
+                                    show: true
+                                },
+                                dataView: {
+                                    show: true,
+                                    readOnly: true
+                                },
+                                restore: {
+                                    show: true
+                                },
+                                saveAsImage: {
+                                    show: true
+                                }
+                            }
+                        },
+                        calculable: true,
+                        series: [
+                            {
+                                name: "微名片城市占比",
+                                type: "pie",
+                                radius: "50%",
+                                center: ["50%", "50%"],
+                                data: json.data.name_value,
+                                itemStyle: {
+                                    normal: {
+                                        label: {
+                                            formatter: "{b}: {d}%"
+                                        }
+                                    }
+                                },
+                            }
+                        ],
+                        color:['#fe72ec','#44e2ff' ,'#ffac28' ,'#1660e8' ,'#9f86ff' ,'#ff6156' ,'#50ff00' ,'#E8E349', '#ffffff']
+                    };
+
+                myChart.setOption(option);
+            }
+        });
+	</script>
+
+
+	<!-- item3 -->
+	<script type="text/javascript">
+
+
+	// 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=45',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json.data);
+                var myChart = echarts.init(document.getElementById('item3'), '');
+                var option ={
+					title: {
+						text: "[ 微名片城市分析 ]",
+						y: "top",
+						x: "left",
+						textStyle: {
+							color: "#fff",
+                            fontWeight: "normal"
+						}
+					},
+					tooltip: {
+						trigger: "item"
+					},
+					dataRange: {
+						min: 0,
+						max: 1000,
+						x: "10%",
+						y2: "5%",
+						 text: ["高", "低"],
+						calculable: true,
+						color: ["#ED9CE6", "#F4A55C"],
+                        itemWidth:12,
+                        itemHeight: 80,
+                        textStyle: {
+                            color: "#fff",
+                        }
+					},
+					roamController: {
+						show: true,
+						x: "right",
+						mapTypeControl: {
+							广西: true
+						}
+					},
+					series: [
+						{
+							name: "微名片数量",
+							type: "map",
+                            mapType: "china",
+                            roam: false,
+                            mapValueCalculation: "sum",
+							itemStyle: {
+								normal: {
+									label: {
+										show: true,
+                                        textStyle: {
+                                            color: "#333333"
+                                        }
+									},
+								},
+								emphasis: {
+									label: {
+										show: true,
+                                        textStyle: {
+                                            color: "#333333"
+                                        }
+									},
+								}
+							},
+							data: json.data.name_value
+						}
+					]
+				};
+                myChart.setOption(option);
+            }
+        });
+
+
+	</script>
+
+	<!-- item4 -->
+	<script type="text/javascript">
+
+		// 基于准备好的dom，初始化echarts实例
+        $.ajax({
+            async: false,
+            url: 'http://test.66diqiu.com/api/bigscreen/get_record?data_type=46',
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (json) {
+                console.log(json);
+                var myChart = echarts.init(document.getElementById('item4'), '');
+                var option ={
+						title: {
+							text: "[ 转发/分享量分析 ]",
+							y: "top",
+							x: "left",
+							textStyle: {
+								color: "#fff",
+								fontWeight: "normal"
+								// fontSize: 16
+							}
+						},
+						tooltip: {
+							trigger: "axis"
+						},
+						legend: {
+							data: ["转发量", "分享量"],
+							x:"right",
+							textStyle: {
+								color: "#fff",
+								fontSize: 15
+							}
+						},
+						toolbox: {
+							show: false,
+							feature: {
+								mark: {
+									show: true
+								},
+								dataView: {
+									show: true,
+									readOnly: true
+								},
+								magicType: {
+									show: false,
+									type: ["line", "bar"]
+								},
+								restore: {
+									show: true
+								},
+								saveAsImage: {
+									show: true
+								}
+							}
+						},
+						calculable: true,
+						xAxis: [
+							{
+								type: "category",
+								data: json.data.all_column[0],
+								nameTextStyle: {
+									color: "rgb(255, 255, 255)"
+								},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									show: false,
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								splitLine: {
+									show: false
+								},
+								scale: true
+							}
+						],
+						yAxis: [
+							{
+								type: "value",
+								nameTextStyle: {
+									color: "rgb(255, 255, 255)"
+								},
+								axisLine: {
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisLabel: {
+									textStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								axisTick: {
+									show: false,
+									lineStyle: {
+										color: "rgb(255, 255, 255)"
+									}
+								},
+								splitLine: {
+									show: false
+								},
+								scale: true
+							}
+						],
+						series: [
+							{
+								name: "转发量",
+								type: "bar",
+								data: json.data.all_column[1],
+								itemStyle: {
+					                normal: {
+					                    label: {
+					                        show: false,
+					                        position: "right",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    },
+					                    color: "#FF74F1"
+					                }
+					            }
+							},
+							{
+								name: "分享量",
+								type: "bar",
+								data: json.data.all_column[2],
+								itemStyle: {
+					                normal: {
+					                    label: {
+					                        show: false,
+					                        position: "right",
+					                        textStyle: {
+					                            color: "#fff"
+					                        }
+					                    },
+					                    color: "#B19BFF"
+					                }
+					            }
+							}
+						],
+						grid:{
+							x:"12%",
+						}
+					};
+
+                myChart.setOption(option);
+            }
+        });
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

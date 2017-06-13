@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>气象环保分析</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<script src="js/gx.js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_txf3nh396xpc766r.css">
+</head>
+<body>
+    <div class="containerWrap clearfix weatherWrap">
+		<!--标题-->
+		<div class="gx-title box">
+			<h1 style="padding:0 7vw">气象环保分析</h1>
+			<div class="nav">
+				<a href="javascript:;"  class="menu menu-list">
+					<i class="iconfont icon-dh"></i> 导航
+				</a>
+				<a href="index.html" class="menu menu-index">
+					<i class="iconfont icon-index"></i> 返回首页
+				</a>
+			</div>
+			<!--下拉菜单-->
+			<div class="menu-box none">
+				<ul>
+					<li><a href="count.html">全部统计</a></li>
+					<li><a href="list.html">新闻资讯列表</a></li>
+					<li><a href="profile.html">网络关注度排名</a></li>
+					<li><a href="scenic.html">广西景区排名</a></li>
+					<li><a href="weather.html">气象环保分析</a></li>
+					<li><a href="keliu.html">广西客流来源分布</a></li>
+					<li><a href="hot_search.html">广西城市热搜分析</a></li>
+					<li><a href="mudidi.html">广西游客出境/国内目的地分析</a></li>
+					<li><a href="baidu_hot.html">百度旅游关注热词分析</a></li>
+					<li><a href="manyidu.html">游客满意度统计分析</a></li>
+					<li><a href="zixun.html">同业担保交易实时</a></li>
+					<li><a href="hetong.html">电子合同出游实时</a></li>
+					<li><a href="website.html">旅行社网站使用统计</a></li>
+					<li><a href="wei_card.html">旅行社从业人员微名片分布</a></li>
+					<li><a href="chengxin_qiye.html">诚信企业分析</a></li>
+					<li><a href="xiaofei_nianling.html">游客消费水平及年龄分析</a></li>
+					<li><a href="shuangchuang.html">双创人群统计</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--内容-->
+		<div class="weather-main1 box">
+			<div class="weather-top weather-box box">
+				<div class="city-title">
+					<b style="font-size: 18px;font-weight: bold;">桂林</b>
+					<span class="y-color">[未来5天天气变化]</span>
+					<span class="g-color pingjun">平均气温20℃</span>
+				</div>
+				<ul class="clearfix">
+					<li class="fen-color no1">
+						<!-- 角 -->
+						<div class="jiao1"></div>
+						<div class="jiao2"></div>
+						<div class="jiao3"></div>
+						<div class="jiao4"></div>
+						<div class="tianqi-img" style="background:rgba(255,117,238,0.1)">
+							<i class="iconfont icon-sun"></i>
+						</div>
+						<p>&nbsp;</p>
+						<p>17℃~23℃</p>
+						<p>晴</p>
+						<p>微风级</p>
+						<p>东北风</p>
+						<p>&nbsp;</p>
+					</li>
+					<li class="g-color no2">
+						<!-- 角 -->
+						<div class="jiao1"></div>
+						<div class="jiao2"></div>
+						<div class="jiao3"></div>
+						<div class="jiao4"></div>
+						<div class="tianqi-img" style="background:rgba(70,255,211,0.1)">
+							<i class="iconfont icon-sun"></i>
+						</div>
+						<p>&nbsp;</p>
+						<p>17℃~23℃</p>
+						<p>晴</p>
+						<p>微风级</p>
+						<p>东北风</p>
+						<p>&nbsp;</p>
+					</li>
+					<li class="y-color no3">
+						<!-- 角 -->
+						<div class="jiao1"></div>
+						<div class="jiao2"></div>
+						<div class="jiao3"></div>
+						<div class="jiao4"></div>
+						<div class="tianqi-img" style="background:rgba(255,172,40,0.1)">
+							<i class="iconfont icon-sun"></i>
+						</div>
+						<p>&nbsp;</p>
+						<p>17℃~23℃</p>
+						<p>晴</p>
+						<p>微风级</p>
+						<p>东北风</p>
+						<p>&nbsp;</p>
+					</li>
+					<li class="lan-color no4">
+						<!-- 角 -->
+						<div class="jiao1"></div>
+						<div class="jiao2"></div>
+						<div class="jiao3"></div>
+						<div class="jiao4"></div>
+						<div class="tianqi-img" style="background:rgba(128,230,255,0.1)">
+							<i class="iconfont icon-sun"></i>
+						</div>
+						<p>&nbsp;</p>
+						<p>17℃~23℃</p>
+						<p>晴</p>
+						<p>微风级</p>
+						<p>东北风</p>
+						<p>&nbsp;</p>
+					</li>
+					<li class="zi-color no5">
+						<!-- 角 -->
+						<div class="jiao1"></div>
+						<div class="jiao2"></div>
+						<div class="jiao3"></div>
+						<div class="jiao4"></div>
+						<div class="tianqi-img" style="background:rgba(167,145,255,0.1)">
+							<i class="iconfont icon-sun"></i>
+						</div>
+						<p>&nbsp;</p>
+						<p>17℃~23℃</p>
+						<p>晴</p>
+						<p>微风级</p>
+						<p>东北风</p>
+						<p>&nbsp;</p>
+					</li>
+				</ul>
+			</div>
+			<div class="weather-btm" id="main1">
+
+			</div>
+		</div>
+		<div class="weather-main2 box">
+			<p class="content-title">
+				<b style="font-size: 18px">[ 生活指数 ]</b>
+				<span class="y-color">温馨提示</span>
+			</p>
+			<ul class="content-list clearfix">
+				<li>
+					<div class="content-list-li">
+						<div class="content-img left">
+							<i class="iconfont icon-pm g-color"></i>
+						</div>
+						<div class="content-info left sh1">
+							<p>桂林市空气质量指数(pm2.5含量)</p>
+							<h1 class="g-color">31 空气优</h1>
+							<p class="odd-ellipsis">打败了全国95%的城市，空气质量令人满意</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="content-list-li">
+						<div class="content-img left">
+							<i class="iconfont icon-sun zi-color"></i>
+						</div>
+						<div class="content-info left sh2">
+							<p>紫外线指数</p>
+							<h1 class="zi-color">很强</h1>
+							<p class="odd-ellipsis">注意防晒，建议涂擦SPF20以上，PA++护肤品，避强光。</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="content-list-li">
+						<div class="content-img left">
+							<i class="iconfont icon-yundong lan-color"></i>
+						</div>
+						<div class="content-info left sh3">
+							<p>运动指数</p>
+							<h1 class="lan-color">较适宜</h1>
+							<p class="odd-ellipsis">风力稍强，推荐您进行室内运动</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="content-list-li">
+						<div class="content-img left">
+							<i class="iconfont icon-icon7 fen-color"></i>
+						</div>
+						<div class="content-info left sh4">
+							<p>穿衣指数</p>
+							<h1 class="fen-color">炎热</h1>
+							<p class="odd-ellipsis">天气炎热，建议着短裙、短裤、短薄外套、T恤等夏季服装。</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="weather-main3 box">
+			<p class="content-title">
+				<b style="font-size: 18px">[ 主要城市今日天气预报 ]</b>
+				<span class="y-color">广西省</span>
+			</p>
+			<ul class="content2-list box clearfix">
+				<li>
+					<span>桂林</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+				<li>
+					<span>南宁</span>
+					<i class="iconfont"></i>/
+					<i class="iconfont"></i>
+					<span>15℃/25℃</span>
+				</li>
+			</ul>
+		</div>
+    </div>
+</body>
+<script type="text/javascript">
+// 天气预报js
+
+	// var url = "http://php.weather.sina.com.cn/iframe/index/w_cl.php?code=js&city=" + '南宁' + "&day=0&dfc=3";
+	// var url = "http://wthrcdn.etouch.cn/weather_mini?city=" + '南宁';
+    // var url = "http://api.k780.com/?app=weather.future&weaid=222&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json";
+    // var url = "http://api.map.baidu.com/telematics/v3/weather?location=%E5%98%89%E5%85%B4&output=json&ak=B5680cb3b4fb77e505ae9a43100e8112";
+    // var url = "http://wthrcdn.etouch.cn/WeatherApi?citykey=101010100";
+    var url = "http://test.66diqiu.com/api/bigscreen/weather?cityname=桂林";
+        $.ajax({
+            // url: url,
+            // dataType: "jsonp",
+            // scriptCharset: "gbk",
+            type: "get",
+	        async: true,
+	        url: url,
+	        xhrFields: {
+	          withCredentials: true
+	        },
+	        dataType: "jsonp",
+	        jsonp: "callback",
+	        jsonpCallback:"myHandler",
+            success: function (data) {
+            	var res = data.result;
+                var pingjun = '平均气温'+Math.round((res[0].temp_high*1+res[0].temp_low*1+res[1].temp_high*1+res[1].temp_low*1+res[2].temp_high*1+res[2].temp_low*1+res[3].temp_high*1+res[3].temp_low*1+res[4].temp_high*1+res[4].temp_low*1)/10)+'℃';
+                $('.pingjun').text(pingjun);
+
+                $('.no1 p:eq(1)').text(res[0].temp_low+'℃~'+res[0].temp_high+'℃');
+                $('.no2 p:eq(1)').text(res[1].temp_low+'℃~'+res[1].temp_high+'℃');
+                $('.no3 p:eq(1)').text(res[2].temp_low+'℃~'+res[2].temp_high+'℃');
+                $('.no4 p:eq(1)').text(res[3].temp_low+'℃~'+res[3].temp_high+'℃');
+                $('.no5 p:eq(1)').text(res[4].temp_low+'℃~'+res[4].temp_high+'℃');
+
+                $('.no1 p:eq(2)').text(res[0].weather);
+                $('.no2 p:eq(2)').text(res[1].weather);
+                $('.no3 p:eq(2)').text(res[2].weather);
+                $('.no4 p:eq(2)').text(res[3].weather);
+                $('.no5 p:eq(2)').text(res[4].weather);
+
+                $('.no1 p:eq(3)').text(res[0].winp);
+                $('.no2 p:eq(3)').text(res[1].winp);
+                $('.no3 p:eq(3)').text(res[2].winp);
+                $('.no4 p:eq(3)').text(res[3].winp);
+                $('.no5 p:eq(3)').text(res[4].winp);
+
+                $('.no1 p:eq(4)').text(res[0].wind);
+                $('.no2 p:eq(4)').text(res[1].wind);
+                $('.no3 p:eq(4)').text(res[2].wind);
+                $('.no4 p:eq(4)').text(res[3].wind);
+                $('.no5 p:eq(4)').text(res[4].wind);
+
+                // $('.no1 p:eq(5)').text(res[0].week);
+                // $('.no2 p:eq(5)').text(res[1].week);
+                // $('.no3 p:eq(5)').text(res[2].week);
+                // $('.no4 p:eq(5)').text(res[3].week);
+                // $('.no5 p:eq(5)').text(res[4].week);
+
+
+                if(res[0].weatid=='1'){//晴
+                	$('.no1 i').addClass('icon-sun');
+                }else if(res[0].weatid=='2'){//多云
+                	$('.no1 i').addClass('icon-tianqiqing');
+                }else if(res[0].weatid=='3'){//阴
+                	$('.no1 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no1 i').addClass('icon-tianqi1');
+                }
+
+                if(res[1].weatid=='1'){//晴
+                	$('.no2 i').addClass('icon-sun');
+                }else if(res[1].weatid=='2'){//多云
+                	$('.no2 i').addClass('icon-tianqiqing');
+                }else if(res[1].weatid=='3'){//阴
+                	$('.no2 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no2 i').addClass('icon-tianqi1');
+                }
+
+                if(res[2].weatid=='1'){//晴
+                	$('.no3 i').addClass('icon-sun');
+                }else if(res[2].weatid=='2'){//多云
+                	$('.no3 i').addClass('icon-tianqiqing');
+                }else if(res[2].weatid=='3'){//阴
+                	$('.no3 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no3 i').addClass('icon-tianqi1');
+                }
+
+                if(res[3].weatid=='1'){//晴
+                	$('.no4 i').addClass('icon-sun');
+                }else if(res[3].weatid=='2'){//多云
+                	$('.no4 i').addClass('icon-tianqiqing');
+                }else if(res[3].weatid=='3'){//阴
+                	$('.no4 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no4 i').addClass('icon-tianqi1');
+                }
+
+                if(res[4].weatid=='1'){//晴
+                	$('.no5 i').addClass('icon-sun');
+                }else if(res[4].weatid=='2'){//多云
+                	$('.no5 i').addClass('icon-tianqiqing');
+                }else if(res[4].weatid=='3'){//阴
+                	$('.no5 i').addClass('icon-tianqi');
+                }else{//雨
+                	$('.no5 i').addClass('icon-tianqi1');
+                }
+             
+
+                $('.content2-list li:eq(0) span:eq(0)').text(res[0].citynm);
+	        	$('.content2-list li:eq(0) span:eq(1)').text(res[0].temperature);
+
+	            if(res[0].weatid=='1'){//晴
+	            	$('.content2-list li:eq(0) i:eq(0)').addClass('icon-sun');
+	            }else if(res[0].weatid=='2'){//多云
+	            	$('.content2-list li:eq(0) i:eq(0)').addClass('icon-tianqiqing');
+	            }else if(res[0].weatid=='3'){//阴
+	            	$('.content2-list li:eq(0) i:eq(0)').addClass('icon-tianqi');
+	            }else{//雨
+	            	$('.content2-list li:eq(0) i:eq(0)').addClass('icon-tianqi1');
+	            }
+	            if(res[0].weatid1=='1'){//晴
+	            	$('.content2-list li:eq(0) i:eq(1)').addClass('icon-sun');
+	            }else if(res[0].weatid1=='2'){//多云
+	            	$('.content2-list li:eq(0) i:eq(1)').addClass('icon-tianqiqing');
+	            }else if(res[0].weatid1=='3'){//阴
+	            	$('.content2-list li:eq(0) i:eq(1)').addClass('icon-tianqi');
+	            }else{//雨
+	            	$('.content2-list li:eq(0) i:eq(1)').addClass('icon-tianqi1');
+	            }
+
+
+                //接口返回的天气对应天气weatid转weatid1(晴转多云)
+                var weatherid = [
+		                {"weatid":"1","weather":"晴","weather_icon":"0"},
+		                {"weatid":"2","weather":"多云","weather_icon":"1"},
+		                {"weatid":"3","weather":"阴","weather_icon":"2"},
+		                {"weatid":"4","weather":"阵雨","weather_icon":"3"},
+		                {"weatid":"5","weather":"雷阵雨","weather_icon":"4"},
+		                {"weatid":"6","weather":"雷阵雨有冰雹","weather_icon":"5"},
+		                {"weatid":"7","weather":"雨夹雪","weather_icon":"6"},
+		                {"weatid":"8","weather":"小雨","weather_icon":"7"},
+		                {"weatid":"9","weather":"中雨","weather_icon":"8"},
+		                {"weatid":"10","weather":"大雨","weather_icon":"9"},
+		                {"weatid":"11","weather":"暴雨","weather_icon":"10"},
+		                {"weatid":"12","weather":"大暴雨","weather_icon":"11"},
+		                {"weatid":"13","weather":"特大暴雨","weather_icon":"12"},
+		                {"weatid":"14","weather":"阵雪","weather_icon":"13"},
+		                {"weatid":"15","weather":"小雪","weather_icon":"14"},
+		                {"weatid":"16","weather":"中雪","weather_icon":"15"},
+		                {"weatid":"17","weather":"大雪","weather_icon":"16"},
+		                {"weatid":"18","weather":"暴雪","weather_icon":"17"},
+		                {"weatid":"19","weather":"雾","weather_icon":"18"},
+		                {"weatid":"20","weather":"冻雨","weather_icon":"19"},
+		                {"weatid":"21","weather":"沙尘暴","weather_icon":"20"},
+		                {"weatid":"22","weather":"小雨-中雨","weather_icon":"21"},
+		                {"weatid":"23","weather":"中雨-大雨","weather_icon":"22"},
+		                {"weatid":"24","weather":"大雨-暴雨","weather_icon":"23"},
+		                {"weatid":"25","weather":"暴雨-大暴雨","weather_icon":"24"},
+		                {"weatid":"26","weather":"大暴雨-特大暴雨","weather_icon":"25"},
+		                {"weatid":"27","weather":"小雪-中雪","weather_icon":"26"},
+		                {"weatid":"28","weather":"中雪-大雪","weather_icon":"27"},
+		                {"weatid":"29","weather":"大雪-暴雪","weather_icon":"28"},
+		                {"weatid":"30","weather":"浮尘","weather_icon":"29"},
+		                {"weatid":"31","weather":"扬沙","weather_icon":"30"},
+		                {"weatid":"32","weather":"强沙尘暴","weather_icon":"31"},
+		                {"weatid":"33","weather":"霾","weather_icon":"53"}
+		                ];
+                
+            }
+        });	
+</script>
+<script type="text/javascript">
+
+
+var myChart = echarts.init(document.getElementById('main1'), 'macarons');
+var url = "http://wthrcdn.etouch.cn/WeatherApi?citykey=101300101";
+        if (window.XMLHttpRequest)  
+		  {// code for IE7+, Firefox, Chrome, Opera, Safari  
+		  xmlhttp=new XMLHttpRequest();  
+		  }  
+		else  
+		  {// code for IE6, IE5  
+		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");  
+		  }  
+		xmlhttp.open("GET",url,false);  
+		xmlhttp.send();  
+		xmlDoc=xmlhttp.responseXML;
+
+		//线形图数据
+		var xmldata = [
+			xmlDoc.getElementsByTagName('date')[0].innerHTML,
+			xmlDoc.getElementsByTagName('date')[1].innerHTML,
+			xmlDoc.getElementsByTagName('date')[2].innerHTML,
+			xmlDoc.getElementsByTagName('date')[3].innerHTML,
+			xmlDoc.getElementsByTagName('date')[4].innerHTML,
+		];
+		var xmlhight = [
+			(xmlDoc.getElementsByTagName('high')[0].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('high')[1].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('high')[2].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('high')[3].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('high')[4].innerHTML).substring(5,2),
+		];
+		var xmllow = [
+			(xmlDoc.getElementsByTagName('low')[0].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('low')[1].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('low')[2].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('low')[3].innerHTML).substring(5,2),
+			(xmlDoc.getElementsByTagName('low')[4].innerHTML).substring(5,2),
+		];
+
+		//生活指数数据
+		$('.sh1 h1').text(xmlDoc.getElementsByTagName('pm25')[0].innerHTML+' 空气'+xmlDoc.getElementsByTagName('quality')[0].innerHTML);
+		$('.sh1 p:eq(1)').text(xmlDoc.getElementsByTagName('suggest')[0].innerHTML);
+
+		$('.sh2 h1').text(xmlDoc.getElementsByTagName('value')[6].innerHTML);
+		$('.sh2 p:eq(1)').text(xmlDoc.getElementsByTagName('detail')[6].innerHTML);
+
+		$('.sh3 h1').text(xmlDoc.getElementsByTagName('value')[8].innerHTML);
+		$('.sh3 p:eq(1)').text(xmlDoc.getElementsByTagName('detail')[8].innerHTML);
+
+		$('.sh4 h1').text(xmlDoc.getElementsByTagName('value')[2].innerHTML);
+		$('.sh4 p:eq(1)').text(xmlDoc.getElementsByTagName('detail')[2].innerHTML);
+
+
+
+	//线形图内容
+	
+
+	var option = {
+		    title: {
+		        text: "[ 未来一周气温变化 ]",
+		        textStyle: {
+		            color: "rgb(255, 255, 255)",
+		            fontWeight: "normal"
+		        }
+		    },
+		    tooltip: {
+		        trigger: "axis"
+		    },
+		    legend: {
+		    	x: "right",
+		        data: [{name:"最高气温",
+		        textStyle: {
+		            color: "rgb(255, 172, 40)",
+
+		        }},
+		        {name:"最低气温",
+		        textStyle: {
+		            color: "rgb(70, 255, 211)",
+
+		        }}
+		        ],
+		        itemHeight: 15,
+		        itemGap: 20
+		    },
+		    toolbox: {
+		        feature: {
+		            dataView: {
+		                readOnly: true
+		            },
+		            magicType: {
+		                type: ["line", "bar"],
+		                show: false
+		            }
+		        },
+		        show: false
+		    },
+		    calculable: true,
+		    xAxis: [
+		        {
+		            type: "category",
+		            data: xmldata,
+		            nameTextStyle: {
+		                color: "rgb(255, 255, 255)"
+		            },
+		            axisLabel: {
+		                textStyle: {
+		                    color: "rgb(255, 255, 255)"
+		                }
+		            },
+		            axisTick: {
+		                lineStyle: {
+		                    color: "rgb(255, 255, 255)"
+		                }
+		            },
+		            splitLine: {
+		                show: false
+		            },
+		            axisLine: {
+		                lineStyle: {
+		                    color: "rgb(255, 255, 255)"
+		                }
+		            },
+		            boundaryGap: false
+		        }
+		    ],
+		    yAxis: [
+		        {
+		            type: "value",
+		            name: "°C",
+		            nameTextStyle: {
+		                color: "rgb(255, 255, 255)"
+		            },
+		            axisLine: {
+		                lineStyle: {
+		                    color: "rgb(255, 255, 255)"
+		                }
+		            },
+		            axisLabel: {
+		                textStyle: {
+		                    color: "rgb(255, 255, 255)"
+		                }
+		            },
+		            axisTick: {
+		                lineStyle: {
+		                    color: "rgb(255, 255, 255)"
+		                }
+		            },
+		            splitLine: {
+		                show: false
+		            },
+		            scale: true
+		        }
+		    ],
+		    series: [
+		        {
+		            name: "最高气温",
+		            type: "line",
+		            data: xmlhight,
+		            itemStyle: {
+		                normal: {
+		                    lineStyle: {
+		                        color: "rgb(255, 172, 40)"
+		                    }
+		                }
+		            }
+		        },
+		        {
+		            name: "最低气温",
+		            type: "line",
+		            data: xmllow,
+		            itemStyle: {
+		                normal: {
+		                    lineStyle: {
+		                        color: "rgb(70, 255, 211)"
+		                    }
+		                }
+		            }
+		        }
+		    ],
+		    grid: {
+		        borderWidth: 0
+		    }
+		}
+	myChart.setOption(option);
+
+</script>
+<script type="text/javascript">
+//主要城市天气
+var storage = window.localStorage;
+var nowtime = $.now()-3600000;//前一个小时	
+	var citys = {0:'柳州',1:'南宁',2:'玉林',3:'梧州',4:'钦州',5:'百色',6:'贵港',7:'河池',8:'来宾',9:'北海',10:'崇左',11:'贺州',12:'防城港'};//广西13市,不含南宁
+
+if(storage.length<11 || storage.time<nowtime){console.log('yibu');
+	localStorage.clear();//清除缓存
+	storage.time = $.now();
+	for(var i=0;i<11;i++){
+		get_weather(i);
+	}
+}else{console.log('huancun');
+	for(var h=0;h<11;h++){
+		var hh=h+1;
+		res = JSON.parse(storage[h]);
+    	$('.content2-list li:eq('+hh+') span:eq(0)').text(res.citynm);
+    	$('.content2-list li:eq('+hh+') span:eq(1)').text(res.temperature);
+
+        if(res.weatid=='1'){//晴
+        	$('.content2-list li:eq('+hh+') i:eq(0)').addClass('icon-sun');
+        }else if(res.weatid=='2'){//多云
+        	$('.content2-list li:eq('+hh+') i:eq(0)').addClass('icon-tianqiqing');
+        }else if(res.weatid=='3'){//阴
+        	$('.content2-list li:eq('+hh+') i:eq(0)').addClass('icon-tianqi');
+        }else{//雨
+        	$('.content2-list li:eq('+hh+') i:eq(0)').addClass('icon-tianqi1');
+        }
+        if(res.weatid1=='1'){//晴
+        	$('.content2-list li:eq('+hh+') i:eq(1)').addClass('icon-sun');
+        }else if(res.weatid1=='2'){//多云
+        	$('.content2-list li:eq('+hh+') i:eq(1)').addClass('icon-tianqiqing');
+        }else if(res.weatid1=='3'){//阴
+        	$('.content2-list li:eq('+hh+') i:eq(1)').addClass('icon-tianqi');
+        }else{//雨
+        	$('.content2-list li:eq('+hh+') i:eq(1)').addClass('icon-tianqi1');
+        }
+		
+	}
+
+}
+	// for(var i=0;i<11;i++){
+	// 	get_weather(i);
+	// }
+
+	function get_weather(i){
+		var ii = i+1;
+
+		$.ajax({
+		        type: "get",
+		        async: true,
+		        url: "http://test.66diqiu.com/api/bigscreen/weather?cityname="+citys[i],
+		        xhrFields: {
+		          withCredentials: true
+		        },
+		        dataType: "jsonp",
+		        jsonp: "callback",
+		        // jsonpCallback:"myHandler",
+		        success: function (data) {
+		        	res = data.result[0];
+		        	window.localStorage[i] = JSON.stringify(res);//存储到本地
+		        	$('.content2-list li:eq('+ii+') span:eq(0)').text(res.citynm);
+		        	$('.content2-list li:eq('+ii+') span:eq(1)').text(res.temperature);
+
+		            if(res.weatid=='1'){//晴
+		            	$('.content2-list li:eq('+ii+') i:eq(0)').addClass('icon-sun');
+		            }else if(res.weatid=='2'){//多云
+		            	$('.content2-list li:eq('+ii+') i:eq(0)').addClass('icon-tianqiqing');
+		            }else if(res.weatid=='3'){//阴
+		            	$('.content2-list li:eq('+ii+') i:eq(0)').addClass('icon-tianqi');
+		            }else{//雨
+		            	$('.content2-list li:eq('+ii+') i:eq(0)').addClass('icon-tianqi1');
+		            }
+		            if(res.weatid1=='1'){//晴
+		            	$('.content2-list li:eq('+ii+') i:eq(1)').addClass('icon-sun');
+		            }else if(res.weatid1=='2'){//多云
+		            	$('.content2-list li:eq('+ii+') i:eq(1)').addClass('icon-tianqiqing');
+		            }else if(res.weatid1=='3'){//阴
+		            	$('.content2-list li:eq('+ii+') i:eq(1)').addClass('icon-tianqi');
+		            }else{//雨
+		            	$('.content2-list li:eq('+ii+') i:eq(1)').addClass('icon-tianqi1');
+		            }
+		        }
+		    });	
+	}	
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

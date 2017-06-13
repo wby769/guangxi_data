@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>广西旅游数据-列表</title>
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.10.2.min.js" type="text/javascript"></script>
+	<script src="js/echarts.min .js" type="text/javascript"></script>
+	<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_pvnoxpcbodc2fbt9.css">
+</head>
+<body>
+    <div class="containerWrap clearfix">
+		<div class="list-title1 box">
+			<div class="list-item">
+				<div class="tt title-active">
+					<b>新闻资讯</b>
+				</div>
+			</div>
+		</div>
+		<div class="list-title2 box" id="list-title2">
+		</div>
+		<div class="list-main box" id="abox1">
+		</div>
+		<div class="list-main box">
+
+			<div id="abox2">
+
+			</div>
+			<div class="list-item list-item-btn">
+				<a href="index.html" class="btn">首页</a>
+				<a href="javascript:;" class="btn" data-id="-1">前一屏</a>
+				<a href="javascript:;" class="btn" data-id="1">后一屏</a>
+				<!--<a href="javascript:;" class="btn" data-id="999">末页</a>-->
+			</div>
+		</div>
+    </div>
+
+<script>
+    var page = 1, cat_id = 0, maxpage = 1;
+	var caturl = 'http://test.66diqiu.com/api/article/cat';
+
+    $.ajax({
+        async:false,
+        url: caturl,
+        type: "GET",
+        dataType: 'jsonp',
+        timeout: 5000,
+        success: function (json) {
+            var html = '', atv = 'title-active';
+            for(var i in json){
+                console.log(json[i]);
+                html+= "\t	\t	\t	<div class=\"list-item\">\n" +
+                    "<div data-id='"+json[i].id+"' class=\"tt1 tt "+atv+"\">\n" +
+                    "<b>"+json[i].name+"</b>\n" +
+                    "\t	\t	\t	\t	</div>\n" +
+                    "\t	\t	\t	</div>";
+                if(atv){
+                    cat_id = json[i].id;
+                    page = 1;
+				}
+                atv = '';
+            }
+            $('#list-title2').html(html);
+            get_article_list();
+        }
+    });
+
+    function get_article_list(){
+		var url = 'http://test.66diqiu.com/api/article/article_list?page='+page+'&pagesize=11&cat_id='+cat_id;
+
+        $.ajax({
+            async:false,
+            url: url,
+            type: "GET",
+            dataType: 'jsonp',
+            timeout: 5000,
+            success: function (data) {
+                var json = data.result;
+                maxpage = data.maxpage;
+                console.log(json);
+                var html1 = '', html = '', html2 = '';
+                var j = 0;
+                for(var i in json) {
+                    j++;
+                    html = "<div class=\"list-item\">\n" +
+                        "<div class=\"content\">\n" +
+                        "<span class=\"bar fen-bg\">最热</span>\n" +
+                        "<a href='detail.html?id="+json[i].article_id+"'><h1 style='color:#fff' class=\"odd-ellipsis\">"+json[i].title+"</h1></a>\n" +
+                        "<p><span class=\"right\">"+json[i].add_time+"</span></p>\n" +
+                        "</div>\n" +
+                        "</div>";
+
+                    if(j<=6){
+                        html1 += html;
+                    }else{
+                        html2 += html;
+					}
+                }
+
+//                $(html2).insertBefore('.list-item-btn');
+                $('#abox1').html(html1);
+                $('#abox2').html(html2);
+            }
+        });
+	}
+
+    $('.btn').on('click', function () {
+        switch ($(this).index()){
+			case 0:
+			    page = 1;
+                get_article_list();
+			    break;
+			case 1:
+                page--;
+                if(page<=1){
+                    page = 1;
+				}
+                get_article_list();
+			    break;
+			case 2:
+                page++;
+                if(page>=maxpage){
+                    page = maxpage;
+				}
+                get_article_list();
+			    break;
+			case 3:
+                page = maxpage;
+                get_article_list();
+			    break;
+		}
+    });
+
+    $(document).on('click', '.tt1', function () {
+		var t = $(this);
+		$('.tt1').removeClass('title-active');
+		t.addClass('title-active');
+
+		cat_id = t.attr('data-id');
+        page = 1;
+        get_article_list();
+
+    });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
